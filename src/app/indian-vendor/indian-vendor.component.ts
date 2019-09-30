@@ -9,7 +9,7 @@ export class IndianVendorComponent implements OnInit {
 
   indianVendors: IndianVendor[];
   errorMsg: any;
-  editNorthItem: IndianVendor;
+  editIndianItem: IndianVendor;
 
   constructor(public indianVendorService: IndianVendorService) { }
 
@@ -20,4 +20,27 @@ export class IndianVendorComponent implements OnInit {
     );
   }
 
+  delete(indianVendor: IndianVendor): void {
+    this.indianVendors = this.indianVendors.filter(n => n !== indianVendor);
+    this.indianVendorService.deleteIndianItem(indianVendor.id).subscribe();  
+    alert("Menu Item: " + indianVendor.name + " Deleted!");   
+  }
+
+  edit(indianVendor: IndianVendor)
+  {
+    this.editIndianItem = indianVendor;
+  }
+
+  update() {
+    if (this.editIndianItem) {
+      this.indianVendorService.updateIndianItem(this.editIndianItem).subscribe
+        (editNorthItem => {
+          const nr = this.editIndianItem ? this.indianVendors.findIndex(n => n.id === this.editIndianItem.id) : -1;
+          if (nr > -1) {
+            this.indianVendors[nr] = this.editIndianItem;
+          }
+        });
+      this.editIndianItem = undefined;
+    }
+  }
 }

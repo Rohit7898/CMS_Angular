@@ -13,4 +13,16 @@ export class IndianVendorService {
     let url ="./assets/data/indian.json";
     return this.httpClient.get<IndianVendor[]>(url);
   }
+
+  deleteIndianItem(id: number): Observable<{}>{
+    let url ="./assets/data/indian.json";
+    const deleteUrl= `${url}/${id}`;
+    return this.httpClient.delete(deleteUrl); 
+  }
+
+  updateIndianItem(indianVendor: IndianVendor): Observable<IndianVendor> {
+    let url ="./assets/data/indian.json";  
+    return this.httpClient.put<IndianVendor>(url, indianVendor);
+  }
+
 }

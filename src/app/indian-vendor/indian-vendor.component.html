@@ -1,8 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row">
@@ -14,6 +10,19 @@
                                 style="float: right">${{n.price}}</span>
                         </p>
 
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input *ngIf="n===editIndianItem" [(ngModel)]="n.name" type="text" (blur)="update()"
+                                (keyup.enter)="update()"> 
+                            <input *ngIf="n===editIndianItem" [(ngModel)]="n.price" type="text" (blur)="update()"
+                                (keyup.enter)="update()">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
+                                (click)="edit(n)">
+                                Edit</button>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
+                                (click)="delete(n)">Delete</button>                                        
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

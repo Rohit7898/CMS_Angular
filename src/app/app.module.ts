@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AmericanVendorComponent } from './american-vendor/american-vendor.component';
 import { IndianVendorComponent } from './indian-vendor/indian-vendor.component';
 import { MexicanVendorComponent } from './mexican-vendor/mexican-vendor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MexicanVendorComponent } from './mexican-vendor/mexican-vendor.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
