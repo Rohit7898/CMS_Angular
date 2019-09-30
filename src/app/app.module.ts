@@ -11,12 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AmericanVendorComponent } from './american-vendor/american-vendor.component';
 import { IndianVendorComponent } from './indian-vendor/indian-vendor.component';
 import { MexicanVendorComponent } from './mexican-vendor/mexican-vendor.component';
-<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
-
-=======
 import { OrderComponent } from './order/order.component';
->>>>>>> 47eeacea6ad606962d81099dc740122c29bbf238
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +30,9 @@ import { OrderComponent } from './order/order.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
     HttpClientModule,
-    FormsModule
-=======
+    FormsModule,
     NgbModule
->>>>>>> 47eeacea6ad606962d81099dc740122c29bbf238
   ],
   exports: [OrderComponent],
   providers: [],
