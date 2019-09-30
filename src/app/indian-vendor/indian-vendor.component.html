@@ -3,7 +3,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-<div class="container">
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let n of indianVendors">
+                <div class="card mb-4 box-shadow">
+
+                    <div class="card-body">
+                        <p class="card-text">{{n.name}}<span
+                                style="float: right">${{n.price}}</span>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="container">
     <div class="row">
         <div class="col-lg-10 mx-auto col-12 text-center mb-3">
             <h1 class="hh mt-0 text-primary">Our Menu</h1>
@@ -144,4 +161,4 @@
 
 
     </div>
-</div>
+</div> -->
