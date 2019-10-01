@@ -12,6 +12,8 @@ import { AmericanVendorComponent } from './american-vendor/american-vendor.compo
 import { IndianVendorComponent } from './indian-vendor/indian-vendor.component';
 import { MexicanVendorComponent } from './mexican-vendor/mexican-vendor.component';
 import { FormsModule } from '@angular/forms';
+import { OrderComponent } from './order/order.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   exports: [OrderComponent],
   providers: [],
