@@ -1,31 +1,31 @@
 [
     {
         "id": 1,
-        "name": "Coffee",
+        "name": "Temrin Fresca",
         "price": 6.00,
         "image": "assets/images/tea.jpg"
     },
     {         
         "id": 2,
-        "name": "Lassi",
+        "name": "Choclate Martini",
         "price": 9.00,
         "image": "assets/images/black.jpg"
     },
     {
         "id" : 3,
-        "name": "Milk",
+        "name": "Sweet Margarita",
         "price": 7.50,
         "image": "assets/images/mango.jpg"
     },
     {
         "id" : 4,
-        "name": "Iced Tea",
+        "name": "Prickly Pear",
         "price": 7.99,
         "image": "assets/images/chole puri.jpg"
     },
     {
         "id" : 5,
-        "name": "Mango Juice",
+        "name": "Classic MArtini",
         "price": 8.99,
         "image": "assets/images/Chole-Bhature.jpg"
     },
@@ -37,73 +37,73 @@
     },
     {
         "id" : 7,
-        "name": "Chana Nan",
+        "name": "Fried Shrimp",
         "price": 4.99,
         "image": "assets/images/paratha.jpg"     
     },
     {
         "id" : 8,
-        "name": "Chicken Tikka",
+        "name": "Tuscan Brussels",
         "price": 9.99,
         "image": "assets/images/Thandoori-Chicken.jpg"
     },
     {
         "id" : 9,
-        "name": "Cheakpea Salad",
+        "name": "Quesdilla",
         "price": 10.99,
         "image": "assets/images/chicken-curry.jpg"
     },
     {
         "id" : 10,
-        "name": "Chicken 65",
+        "name": "Wings",
         "price": 11.00,
         "image": "assets/images/meatball.jpeg"
     },
     {
         "id" : 11,
-        "name": "Chicken Tikka Salad",
+        "name": "Ultimate Nachos",
         "price": 9.99,
         "image": "assets/images/meat.jpg"
     },
     {
         "id" : 12,
-        "name": "Pappada",
+        "name": "Stuffed Clams",
         "price": 10.50,
         "image": "assets/images/Chicken biryani.jpg"
     },
     {
         "id" : 13,
-        "name": "Curry",
+        "name": "Salad",
         "price": 4.99,
         "image": "assets/images/paratha.jpg"     
     },
     {
         "id" : 14,
-        "name": "Chicken Karahi",
+        "name": "Boneless Ribs",
         "price": 9.99,
         "image": "assets/images/Thandoori-Chicken.jpg"
     },
     {
         "id" : 15,
-        "name": "Kebab",
+        "name": "Jambalaya",
         "price": 10.99,
         "image": "assets/images/chicken-curry.jpg"
     },
     {
         "id" : 16,
-        "name": "Duipaza",
+        "name": "Stuffed Shrimp",
         "price": 11.00,
         "image": "assets/images/meatball.jpeg"
     },
     {
         "id" : 17,
-        "name": "Chicken Korma",
+        "name": "Steak Tips",
         "price": 9.99,
         "image": "assets/images/meat.jpg"
     },
     {
         "id" : 18,
-        "name": "Dal Makhni",
+        "name": "Pasta",
         "price": 10.50,
         "image": "assets/images/Chicken biryani.jpg"
     }

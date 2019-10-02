@@ -70,9 +70,9 @@
                                     <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt="">
                                     <div class="overlay">
                                             <h2 class="hh">{{n.name}}</h2>
-                                            <input *ngIf="n===editAmericanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
+                                            <input *ngIf="n===editIndianItem" [(ngModel)]="n.name" type="text" (blur)="update()"
                                                 (keyup.enter)="update()">
-                                            <input *ngIf="n===editAmericanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
+                                            <input *ngIf="n===editIndianItem" [(ngModel)]="n.price" type="text" (blur)="update()"
                                                 (keyup.enter)="update()">
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"

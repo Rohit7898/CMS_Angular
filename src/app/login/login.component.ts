@@ -34,6 +34,14 @@ export class LoginComponent  {
     {
        this.router.navigate(['american-vendor']);
     }
+    else if(this.model.username == "indian" && this.model.password == "amri" && this.model.role == "Vendor" )
+    {
+       this.router.navigate(['indian-vendor']);
+    }
+    else if(this.model.username == "mexican" && this.model.password == "amri" && this.model.role == "Vendor" )
+    {
+       this.router.navigate(['mexican-vendor']);
+    }
     else{
       alert("invalid user name or password or Role");
       this.router.navigate(['login']);
