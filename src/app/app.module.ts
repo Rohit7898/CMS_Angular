@@ -19,6 +19,9 @@ import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { ProfilecardComponent } from './profilecard/profilecard.component';
 import { AdminactionComponent } from './adminaction/adminaction.component';
 import { EmployeetransactionComponent } from './employeetransaction/employeetransaction.component';
+import { AmericanProfileComponent } from './american-profile/american-profile.component';
+import { IndianprofileComponent } from './indianprofile/indianprofile.component';
+import { MexicanprofileComponent } from './mexicanprofile/mexicanprofile.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { EmployeetransactionComponent } from './employeetransaction/employeetran
     AdminhomeComponent,
     ProfilecardComponent,
     AdminactionComponent,
-    EmployeetransactionComponent
+    EmployeetransactionComponent,
+    AmericanProfileComponent,
+    IndianprofileComponent,
+    MexicanprofileComponent
   ],
   imports: [
     BrowserModule,
