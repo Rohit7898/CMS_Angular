@@ -30,6 +30,10 @@ export class LoginComponent  {
     {
        this.router.navigate(['Order']);
     }
+    else if(this.model.username == "american" && this.model.password == "amri" && this.model.role == "Vendor" )
+    {
+       this.router.navigate(['american-vendor']);
+    }
     else{
       alert("invalid user name or password or Role");
       this.router.navigate(['login']);
