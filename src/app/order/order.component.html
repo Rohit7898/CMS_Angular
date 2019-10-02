@@ -23,17 +23,12 @@
                         </p>
 
                         <div class="d-flex justify-content-between align-items-center">
-                            <input *ngIf="n===editAmericanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                                (keyup.enter)="update()"> 
-                            <input *ngIf="n===editAmericanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
-                                (keyup.enter)="update()">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
-                                (click)="edit(n)">
-                                Edit</button>
-                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                                (click)="delete(n)">Delete</button>                                        
-                        </div>
+
+                            <button type="button" class="btn btn-sm btn-outline-primary" title="Add to Your Order"
+                                (click)="details1(n)">Add to Order</button>
+
+                            <!-- <a [routerLink]="['/cart', { id:employeemenu.id }]">Buy Now</a>    -->
+
                         </div>
                     </div>
                 </div>
@@ -60,17 +55,12 @@
                     </p>
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <input *ngIf="n===editIndianItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                            (keyup.enter)="update()"> 
-                        <input *ngIf="n===editIndianItem" [(ngModel)]="n.price" type="text" (blur)="update()"
-                            (keyup.enter)="update()">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
-                            (click)="edit(n)">
-                            Edit</button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                            (click)="delete(n)">Delete</button>                                        
-                    </div>
+
+                        <button type="button" class="btn btn-sm btn-outline-primary" title="Add to Your Order"
+                            (click)="details2(n)">Add to Order</button>
+
+                        <!-- <a [routerLink]="['/cart', { id:employeemenu.id }]">Buy Now</a>    -->
+
                     </div>
                 </div>
             </div>
@@ -99,23 +89,79 @@
                     </p>
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <input *ngIf="n===editMexicanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                            (keyup.enter)="update()"> 
-                        <input *ngIf="n===editMexicanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
-                            (keyup.enter)="update()">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
-                            (click)="edit(n)">
-                            Edit</button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                            (click)="delete(n)">Delete</button>                                        
-                    </div>
+
+                        <button type="button" class="btn btn-sm btn-outline-primary" title="Add to Your Order"
+                            (click)="details3(n)">Add to Order</button>
+
+                        <!-- <a [routerLink]="['/cart', { id:employeemenu.id }]">Buy Now</a>    -->
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
         <!--MEXICAN-->
+        <br>
+            <hr>
+
+            <section id="addmoney" style="float: right;">
+                <h3>Add Balance</h3>
+                <hr>
+
+                <!-- <label for="amount">Amount</label> <input type="number" class="form-control" required
+                    min="4" [(ngModel)]="amount" name="amount" #amount="ngModel">
+                <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="alert alert-danger">
+                    <div *ngIf="amount.errors.required">
+                        Amount is required.
+                    </div>
+                    <div *ngIf="amount.errors.min">
+                        Amount must be > 0
+                    </div>
+                </div> -->
+
+                <input type="number" [(ngModel)]="amount" placeholder="Enter Amount" min="1" required> <br><br>
+                <button class="btn btn-sm btn-outline-success" (click)="addBalance()">Add Money to Wallet</button>
+            </section>
+
+            <section id="mycart" style="position: inherit;">
+                <h3>My Cart</h3>
+                <table style="width: 40%" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Item Price</th>
+                            <th scope="col">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let l of list1" let result=0>
+
+                            <td>{{l.name}}</td>
+                            <td>${{l.price}}</td>
+                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem1(l)">x</button></td>
+                        </tr>
+                        <tr *ngFor="let l of list2" let result=0>
+
+                            <td>{{l.name}}</td>
+                            <td>${{l.price}}</td>
+                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem2(l)">x</button></td>
+                        </tr>
+
+                        <tr *ngFor="let l of list3" let result=0>
+
+                            <td>{{l.name}}</td>
+                            <td>${{l.price}}</td>
+                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem3(l)">x</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h2>Total : ${{total}} </h2>
+
+                <button *ngIf="list1.length>0 || list2.length>0 || list3.length" class=" btn btn-outline-primary btn-lg"
+                    (click)="checkOut(l)">Checkout</button>
+
+            </section>
         </div>
 
     </div>
