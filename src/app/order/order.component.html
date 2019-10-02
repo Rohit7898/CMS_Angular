@@ -1,6 +1,6 @@
 
   <div class="container">
-    <div class="row">
+    
         <div class="col-lg-10 mx-auto col-12 text-center mb-3">
             <h1 class="hh mt-0 text-primary">Our Menu</h1>
             <p class="hh lead">Begin with a selection from our award winning beverage menu or choose a wine from our extensive wine list. Our wine list features over 100 different vintages and has received the chamber of commerce award of excellence.</p>
@@ -12,34 +12,36 @@
             </button>
           </p>
           <div id="collapseExample" [ngbCollapse]="AmericanCollapsed">
-
+            <div class="row">
             <div class="col-md-4" *ngFor="let n of americanVendors">
                 <div class="card mb-4 box-shadow">
 
+
                     <div class="card-body">
+                            <div class="hovereffect">
+                                    <img class="img-responsive" style="width:100%" src="assets/images/American.jpg" alt="">
+                                    <div class="overlay">
+                                       
+                                       <a class="info" routerLink="./american-vendor">Place Order</a>
+                                    </div>
+                                </div>
                         <p class="card-text">{{n.name}}<span
                                 style="float: right">${{n.price}}</span>
                         </p>
 
-                        <div class="d-flex justify-content-between align-items-center">
-                            <input *ngIf="n===editAmericanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                                (keyup.enter)="update()">
-                            <input *ngIf="n===editAmericanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
-                                (keyup.enter)="update()">
-                        <div class="btn-group">
+                        <!-- <div class="d-flex justify-content-between align-items-center">
+                        
                             <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
                                 (click)="edit(n)">
-                                Edit</button>
-                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                                (click)="delete(n)">Delete</button>
-                        </div>
-                        </div>
+                                Order Place</button>
+                                                                   
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<div>
+       </div>
+
     <p>
         <button type="button" class="btn btn-outline-primary" (click)="IndianCollapsed = !IndianCollapsed"
                 [attr.aria-expanded]="!IndianCollapsed" aria-controls="collapseExample">
@@ -47,8 +49,8 @@
         </button>
       </p>
       <div id="collapseExample" [ngbCollapse]="IndianCollapsed">
-
-
+        <div class="row">
+     
         <!--indian-->
         <div class="col-md-4" *ngFor="let n of indianVendors">
             <div class="card mb-4 box-shadow">
@@ -59,24 +61,19 @@
                     </p>
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <input *ngIf="n===editIndianItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                            (keyup.enter)="update()">
-                        <input *ngIf="n===editIndianItem" [(ngModel)]="n.price" type="text" (blur)="update()"
-                            (keyup.enter)="update()">
-                    <div class="btn-group">
+                        
                         <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
                             (click)="edit(n)">
-                            Edit</button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                            (click)="delete(n)">Delete</button>
-                    </div>
+                            Order Place</button>
+                                                               
                     </div>
                 </div>
             </div>
         </div>
+    </div>
         </div>
         <!--INDIAN-->
-
+    
         <p>
             <button type="button" class="btn btn-outline-primary" (click)="MexicanCollapsed = !MexicanCollapsed"
                     [attr.aria-expanded]="!MexicanCollapsed" aria-controls="collapseExample">
@@ -84,8 +81,8 @@
             </button>
           </p>
           <div id="collapseExample" [ngbCollapse]="MexicanCollapsed">
-
-
+            <div class="row">
+         
         <!--MEXICAN-->
 
         <div class="col-md-4" *ngFor="let n of mexicanVendors">
@@ -97,24 +94,20 @@
                     </p>
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <input *ngIf="n===editMexicanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                            (keyup.enter)="update()">
-                        <input *ngIf="n===editMexicanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
-                            (keyup.enter)="update()">
-                    <div class="btn-group">
+                        
                         <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
                             (click)="edit(n)">
-                            Edit</button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                            (click)="delete(n)">Delete</button>
+                            Order Place</button>
+                                                               
                     </div>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
         <!--MEXICAN-->
         </div>
-</div>
+
     </div>
-    </div>
+
+
