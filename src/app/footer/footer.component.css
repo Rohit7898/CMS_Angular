@@ -1,19 +1,22 @@
-#footer {
+/* #footer {
     position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: black;
-    color: white;
+     color: white; 
     text-align: center;
-  
+    
   }
   .me-pic {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-  }
+  } */
+  #sticky-footer {
+    background :rgb(0,0,0);
+  flex-shrink: none;
+}
+
   
-  .back {
-    color: #fff;
-  }
+  
