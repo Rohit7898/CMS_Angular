@@ -1,110 +1,110 @@
 [
     {
         "id": 1,
-        "name": "Coffee",
+        "name": "Honey Spritiz",
         "price": 6.00,
-        "image": "assets/images/tea.jpg"
+        "image": "assets/images/Honey Spritz.jpg"
     },
     {         
         "id": 2,
-        "name": "Lassi",
+        "name": "Valley Soup",
         "price": 9.00,
-        "image": "assets/images/black.jpg"
+        "image": "assets/images/Valley Soup.jpg"
     },
     {
         "id" : 3,
-        "name": "Milk",
+        "name": "Honey Tee",
         "price": 7.50,
-        "image": "assets/images/mango.jpg"
+        "image": "assets/images/Honey Tea.jpg"
     },
     {
         "id" : 4,
-        "name": "Iced Tea",
+        "name": "Lemon Tea",
         "price": 7.99,
-        "image": "assets/images/chole puri.jpg"
+        "image": "assets/images/Lemon Chamomile.jpg"
     },
     {
         "id" : 5,
-        "name": "Mango Juice",
+        "name": "Margarita",
         "price": 8.99,
-        "image": "assets/images/Chole-Bhature.jpg"
+        "image": "assets/images/Mango Margarita.jpg"
     },
     {
         "id" : 6,
         "name": "Mineral Water",
         "price": 8.99,
-        "image": "assets/images/briyani.jpg"
+        "image": "assets/images/mineralwater.jpg"
     },
     {
         "id" : 7,
-        "name": "Chana Nan",
+        "name": "Wild Mushroom Ravioli",
         "price": 4.99,
-        "image": "assets/images/paratha.jpg"     
+        "image": "assets/images/Wild Mushroom Ravioli.jpg"     
     },
     {
         "id" : 8,
-        "name": "Chicken Tikka",
+        "name": "Braised Pork Belly",
         "price": 9.99,
-        "image": "assets/images/Thandoori-Chicken.jpg"
+        "image": "assets/images/Braised Pork Belly.jpg"
     },
     {
         "id" : 9,
-        "name": "Cheakpea Salad",
+        "name": "Chilled Oysters",
         "price": 10.99,
-        "image": "assets/images/chicken-curry.jpg"
+        "image": "assets/images/Chilled Oysters.jpg"
     },
     {
         "id" : 10,
-        "name": "Chicken 65",
+        "name": "Chicken Fried Quail",
         "price": 11.00,
-        "image": "assets/images/meatball.jpeg"
+        "image": "assets/images/Chicken Fried Quail.jpg"
     },
     {
         "id" : 11,
-        "name": "Chicken Tikka Salad",
+        "name": "Tequila Cured Salmon",
         "price": 9.99,
-        "image": "assets/images/meat.jpg"
+        "image": "assets/images/Tequila Cured Salmon.jpg"
     },
     {
         "id" : 12,
-        "name": "Pappada",
+        "name": "Grilled Asparagus",
         "price": 10.50,
-        "image": "assets/images/Chicken biryani.jpg"
+        "image": "assets/images/Grilled Asparagus.jpg"
     },
     {
         "id" : 13,
-        "name": "Curry",
+        "name": "Roasted Chicken",
         "price": 4.99,
-        "image": "assets/images/paratha.jpg"     
+        "image": "assets/images/Roasted Chicken.jpg"     
     },
     {
         "id" : 14,
-        "name": "Chicken Karahi",
+        "name": "Grilled Steak",
         "price": 9.99,
-        "image": "assets/images/Thandoori-Chicken.jpg"
+        "image": "assets/images/Grilled Cauliflower Steak.jpg"
     },
     {
         "id" : 15,
-        "name": "Kebab",
+        "name": "Sauted Salmon",
         "price": 10.99,
-        "image": "assets/images/chicken-curry.jpg"
+        "image": "assets/images/Sauteed King Salmon.jpg"
     },
     {
         "id" : 16,
-        "name": "Duipaza",
+        "name": "Sauted Cod",
         "price": 11.00,
-        "image": "assets/images/meatball.jpeg"
+        "image": "assets/images/Sauteed Cod.jpg"
     },
     {
         "id" : 17,
-        "name": "Chicken Korma",
+        "name": "Roasted Duck",
         "price": 9.99,
-        "image": "assets/images/meat.jpg"
+        "image": "assets/images/Roasted Duck Breast.jpg"
     },
     {
         "id" : 18,
-        "name": "Dal Makhni",
+        "name": "Grilled Strip",
         "price": 10.50,
-        "image": "assets/images/Chicken biryani.jpg"
+        "image": "assets/images/Grilled Meiller Strip.jpg"
     }
 ]

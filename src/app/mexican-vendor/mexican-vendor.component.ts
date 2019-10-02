@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MexicanVendorService } from './mexican-vendor.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-mexican-vendor',
@@ -21,10 +22,34 @@ export class MexicanVendorComponent implements OnInit {
     );
   }
 
+  add(addForm: NgForm): void {
+    this.editMexicanItem = undefined;
+    // name = name.trim();
+    if (!addForm.value.name) {
+      return;
+    }
+
+    if (!addForm.value.price) {
+      return;
+    }
+
+    // The server will generate the id for this new North Indian Item
+    // const newNorthItem: NorthVendor = { name, price } as NorthVendor;
+    // this.northVendorService.addNorthIndianItem(newNorthItem)
+    //   .subscribe(north => {this.northVendors.push(north), console.log(north)},
+    //   error => this.errorMsg = error);
+
+    this.mexicanVendors.push(addForm.value);
+    console.log(this.mexicanVendors);
+    alert("Menu Item: " + addForm.value.name + " Added!");
+    addForm.resetForm();
+
+
+  }
   delete(mexicanVendor: MexicanVendor): void {
     this.mexicanVendors = this.mexicanVendors.filter(n => n !== mexicanVendor);
-    this.mexicanVendorService.deleteMexicanItem(mexicanVendor.id).subscribe();  
-    alert("Menu Item: " + mexicanVendor.name + " Deleted!");   
+    this.mexicanVendorService.deleteMexicanItem(mexicanVendor.id).subscribe();
+    alert("Menu Item: " + mexicanVendor.name + " Deleted!");
   }
 
   edit(mexicanVendor: MexicanVendor)

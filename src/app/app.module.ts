@@ -4,7 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AdminComponent } from './admin/admin.component';
+
 import { EmployeeComponent } from './employee/employee.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -14,18 +14,32 @@ import { MexicanVendorComponent } from './mexican-vendor/mexican-vendor.componen
 import { FormsModule } from '@angular/forms';
 import { OrderComponent } from './order/order.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { ProfilecardComponent } from './profilecard/profilecard.component';
+import { AdminactionComponent } from './adminaction/adminaction.component';
+import { EmployeetransactionComponent } from './employeetransaction/employeetransaction.component';
+import { AcceptComponent } from './accept/accept.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AdminComponent,
+    
     EmployeeComponent,
     HeaderComponent,
     FooterComponent,
     AmericanVendorComponent,
     IndianVendorComponent,
     MexicanVendorComponent,
-    OrderComponent
+    OrderComponent,
+    LoginComponent,
+    AdminhomeComponent,
+    ProfilecardComponent,
+    AdminactionComponent,
+    EmployeetransactionComponent,
+    AcceptComponent
   ],
   imports: [
     BrowserModule,
