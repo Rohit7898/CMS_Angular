@@ -1,1 +1,50 @@
-<p>employee works!</p>
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+  
+      <body>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4" *ngFor="let n of employee">
+                      <div class="card">
+                          <div class="card-body">
+                              <p class="card-image">{{n.image}}</p>
+                              <table>
+                                <br>
+                                <tr>
+                                  <td align=left><b>Name:</b></td>
+                                  <td align=left>{{n.name}}</td>
+                                </tr>
+                                <br>
+                                <tr>
+                                  <td align=left><b>Title:</b></td>
+                                  <td align=left>{{n.title}}</td>
+                                </tr>
+                                <br>
+                                <tr>
+                                    <td align=left><b>Employee ID:</b></td>
+                                    <td align=left>{{n.id}}</td>
+                                  </tr>
+                                  <br>
+                                  <tr>
+                                      <td align=left><b>Contact No:</b></td>
+                                      <td align=left>{{n.contact}}</td>
+                                    </tr>
+                                    <br>
+                                    <tr>
+                                        <td align=left><b>Wallet Balance:</b></td>
+                                        <td align=left>{{n.balance}}</td>
+                                      </tr>
+                                      <br>
+                              </table>
+                            </div>
+                         </div> 
+          </div>
+              </div>
+          </div>
+      </body>
+  </html>
+  

@@ -15,7 +15,7 @@ const routes: Routes = [
  {path: 'Order', component: OrderComponent},
  {path: 'indian-vendor', component: IndianVendorComponent},
  {path: 'american-vendor', component: AmericanVendorComponent},
- {path: 'mexican-vendor', component: MexicanVendorComponent}
+ {path: 'mexican-vendor', component: MexicanVendorComponent} 
 ];
 
 @NgModule({

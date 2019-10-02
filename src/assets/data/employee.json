@@ -1,0 +1,26 @@
+[
+    {
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+    "name" : "John",
+    "title" : "Software Engineer",
+    "id" : "86254",
+    "contact" : "6579843299",
+    "balance" : "$850"
+},
+{
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjlZJz5oG7KfYCygbZAKnwC3nLQFingmZvEXcPz7mwp9siqJMM",
+    "name" : "David",
+    "title" : "Team Lead",
+    "id" : "86508",
+    "contact" : "4863570882",
+    "balance" : "$1400"
+},
+{
+    "image": "Priya.jpg.jpg",
+    "name" : "Priya",
+    "title" : "Software Engineer",
+    "id" : "86468",
+    "contact" : "2486066856",
+    "balance" : "$940"
+}
+]
