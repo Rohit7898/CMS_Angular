@@ -32,15 +32,19 @@
 
                     <div class="card-body">
                             <div class="hovereffect">
-                                    <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt="">
-                                    <div class="overlay">
+                                    <img class="card-img-top"
+                                data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                                style="height: 250px; width: 100%; display: block;">
+                                <!-- <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt=""> -->
+                                <div class="overlay">
                                             <h2 class="hh">{{n.name}}</h2>
-                                       <a class="info" title="Add to Your Order" (click)="details1(n)">Add to Order</a>
+                                       <a class="info" title="Add to Your Order" (click)="details1(n)"><i class="fas fa-cart-arrow-down"></i></a>
                                     </div>
                                 </div>
-                        <p class="card-text">{{n.name}}<span
-                                style="float: right">${{n.price}}</span>
-                        </p>
+                                <p class="card-text"><strong>{{n.name}}</strong><span
+                                    style="float: right"><strong>${{n.price}}</strong></span>
+                            </p>
 
                         
                     </div>
@@ -64,15 +68,19 @@
 
                 <div class="card-body">
                         <div class="hovereffect">
-                                <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt="">
+                                <img class="card-img-top"
+                                data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                                style="height: 250px; width: 100%; display: block;">
+                                <!-- <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt=""> -->
                                 <div class="overlay">
                                         <h2 class="hh">{{n.name}}</h2>
-                                   <a class="info" title="Add to Your Order" (click)="details2(n)">Add to Order</a>
+                                   <a class="info" title="Add to Your Order" (click)="details2(n)"><i class="fas fa-cart-arrow-down"></i></a>
                                 </div>
                             </div>
-                    <p class="card-text">{{n.name}}<span
-                            style="float: right">${{n.price}}</span>
-                    </p>
+                            <p class="card-text"><strong>{{n.name}}</strong><span
+                                style="float: right"><strong>${{n.price}}</strong></span>
+                        </p>
                 </div>
             </div>
         </div>
@@ -96,46 +104,47 @@
 
                 <div class="card-body">
                         <div class="hovereffect">
-                                <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt="">
+                                <img class="card-img-top"
+                                data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                                style="height: 250px; width: 100%; display: block;">
+                                <!-- <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt=""> -->
                                 <div class="overlay">
                                    <h2 class="hh">{{n.name}}</h2>
-                                   <a class="info" title="Add to Your Order" (click)="details3(n)">Add to Order</a>
+                                   <a class="info" title="Add to Your Order" (click)="details3(n)"><i class="fas fa-cart-arrow-down"></i></a>
                                 </div>
                             </div>
-                    <p class="card-text">{{n.name}}<span
-                            style="float: right">${{n.price}}</span>
-                    </p>
+                            <p class="card-text"><strong>{{n.name}}</strong><span
+                                style="float: right"><strong>${{n.price}}</strong></span>
+                        </p>
 
                     
                 </div>
             </div>
         </div>
     </div>
+          </div>
         <!--MEXICAN-->
         <br>
             <hr>
-
+            <p>
+                    <button type="button" class="btn btn-outline-primary" (click)="CartCollapsed = !CartCollapsed"
+                            [attr.aria-expanded]="!CartCollapsed" aria-controls="collapseExample">
+                      Cart
+                    </button>
+                  </p>
+                  <div id="collapseExample" [ngbCollapse]="CartCollapsed">
             <section id="addmoney" style="float: right;">
                 <h3>Add Balance</h3>
                 <hr>
 
-                <!-- <label for="amount">Amount</label> <input type="number" class="form-control" required
-                    min="4" [(ngModel)]="amount" name="amount" #amount="ngModel">
-                <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="alert alert-danger">
-                    <div *ngIf="amount.errors.required">
-                        Amount is required.
-                    </div>
-                    <div *ngIf="amount.errors.min">
-                        Amount must be > 0
-                    </div>
-                </div> -->
 
                 <input type="number" [(ngModel)]="amount" placeholder="Enter Amount" min="1" required> <br><br>
                 <button class="btn btn-sm btn-outline-success" (click)="addBalance()">Add Money to Wallet</button>
             </section>
 
             <section id="mycart" style="position: inherit;">
-                <h3>My Cart</h3>
+                <h3>My Orders</h3>
                 <table style="width: 40%" class="table table-hover">
                     <thead>
                         <tr>
@@ -174,7 +183,7 @@
 
             </section>
         </div>
-
-    </div>
+</div>
+ 
 
 

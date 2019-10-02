@@ -3,108 +3,108 @@
         "id": 1,
         "name": "Temrin Fresca",
         "price": 6.00,
-        "image": "assets/images/tea.jpg"
+        "image": "assets/images/Honey Spritz.jpg"
     },
     {         
         "id": 2,
         "name": "Choclate Martini",
         "price": 9.00,
-        "image": "assets/images/black.jpg"
+        "image": "assets/images/Chocolate Martini.jpg"
     },
     {
         "id" : 3,
         "name": "Sweet Margarita",
         "price": 7.50,
-        "image": "assets/images/mango.jpg"
+        "image": "assets/images/Sweet Margarita.jpg"
     },
     {
         "id" : 4,
         "name": "Prickly Pear",
         "price": 7.99,
-        "image": "assets/images/chole puri.jpg"
+        "image": "assets/images/Prickly Pear.jpg"
     },
     {
         "id" : 5,
-        "name": "Classic MArtini",
+        "name": "Classic Martini",
         "price": 8.99,
-        "image": "assets/images/Chole-Bhature.jpg"
+        "image": "assets/images/Classic Martini.jpg"
     },
     {
         "id" : 6,
         "name": "Mineral Water",
         "price": 8.99,
-        "image": "assets/images/briyani.jpg"
+        "image": "assets/images/mineralwater.jpg"
     },
     {
         "id" : 7,
         "name": "Fried Shrimp",
         "price": 4.99,
-        "image": "assets/images/paratha.jpg"     
+        "image": "assets/images/Fried Shrimp.jpg"     
     },
     {
         "id" : 8,
         "name": "Tuscan Brussels",
         "price": 9.99,
-        "image": "assets/images/Thandoori-Chicken.jpg"
+        "image": "assets/images/Tuscan Bruschetta.jpg"
     },
     {
         "id" : 9,
         "name": "Quesdilla",
         "price": 10.99,
-        "image": "assets/images/chicken-curry.jpg"
+        "image": "assets/images/Quesadilla.jpg"
     },
     {
         "id" : 10,
         "name": "Wings",
         "price": 11.00,
-        "image": "assets/images/meatball.jpeg"
+        "image": "assets/images/Wings.jpg"
     },
     {
         "id" : 11,
         "name": "Ultimate Nachos",
         "price": 9.99,
-        "image": "assets/images/meat.jpg"
+        "image": "assets/images/nachos.jpg"
     },
     {
         "id" : 12,
         "name": "Stuffed Clams",
         "price": 10.50,
-        "image": "assets/images/Chicken biryani.jpg"
+        "image": "assets/images/Stuffed Clams.jpg"
     },
     {
         "id" : 13,
         "name": "Salad",
         "price": 4.99,
-        "image": "assets/images/paratha.jpg"     
+        "image": "assets/images/Salad.jpg"     
     },
     {
         "id" : 14,
         "name": "Boneless Ribs",
         "price": 9.99,
-        "image": "assets/images/Thandoori-Chicken.jpg"
+        "image": "assets/images/Boneless Beef Ribs.jpg"
     },
     {
         "id" : 15,
         "name": "Jambalaya",
         "price": 10.99,
-        "image": "assets/images/chicken-curry.jpg"
+        "image": "assets/images/Jambalaya.jpg"
     },
     {
         "id" : 16,
         "name": "Stuffed Shrimp",
         "price": 11.00,
-        "image": "assets/images/meatball.jpeg"
+        "image": "assets/images/Stuffed Shrimp.jpg"
     },
     {
         "id" : 17,
         "name": "Steak Tips",
         "price": 9.99,
-        "image": "assets/images/meat.jpg"
+        "image": "assets/images/Steak Tips.jpg"
     },
     {
         "id" : 18,
         "name": "Pasta",
         "price": 10.50,
-        "image": "assets/images/Chicken biryani.jpg"
+        "image": "assets/images/pasta.jpg"
     }
 ]

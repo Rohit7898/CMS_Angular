@@ -10,6 +10,9 @@
           <li class="nav-item">
                 <a class="nav-link" routerLink="/request">Requests <span class="sr-only">(current)</span></a>
               </li>
+              <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#myModal">Add <span class="sr-only">(current)</span></a>
+                  </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="#">About us <span class="sr-only">(current)</span></a>
           </li>
@@ -69,8 +72,12 @@
 
                     <div class="card-body">
                             <div class="hovereffect">
-                                    <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt="">
-                                    <div class="overlay">
+                                    <img class="card-img-top"
+                                data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                                style="height: 250px; width: 100%; display: block;">
+                                <!-- <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt=""> -->
+                                <div class="overlay">
                                             <h2 class="hh">{{n.name}}</h2>
                                             <input *ngIf="n===editMexicanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
                                                 (keyup.enter)="update()">
