@@ -43,9 +43,9 @@ export class OrderComponent implements OnInit {
     );
 
   }
-  public AmericanCollapsed = false;
-  public IndianCollapsed = false;
-  public MexicanCollapsed = false;
+  public AmericanCollapsed = true;
+  public IndianCollapsed = true;
+  public MexicanCollapsed = true;
 
   details1(ind: IndianVendor)
     {            
