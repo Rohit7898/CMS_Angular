@@ -9,12 +9,7 @@ import {MexicanVendorService } from '../mexican-vendor/mexican-vendor.service';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-<<<<<<< HEAD
-  order: OrderComponent[];
-  
-  errorMsg: any;
-  constructor() { }
-=======
+
 
   indianVendors: IndianVendor[];
   errorMsg: any;
@@ -25,7 +20,6 @@ export class OrderComponent implements OnInit {
   editMexicanItem: MexicanVendor;
 
   constructor(public indianVendorService: IndianVendorService, public americanVendorService:AmericanVendorService, public mexicanVendorService:MexicanVendorService) { }
->>>>>>> 5e09fb25f972977822ab9ec2b98d824a33463b6e
 
   ngOnInit() {
     this.indianVendorService.getIndianItems().subscribe(
