@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Rohit",
+        "amount": 6.00,
+        "items": "assets/itemss/tea.jpg"
+    },
+    {         
+        "id": 2,
+        "name": "Prasanna",
+        "amount": 9.00,
+        "items": "assets/itemss/black.jpg"
+    },
+    {
+        "id" : 3,
+        "name": "Priyanka",
+        "amount": 7.50,
+        "items": "assets/itemss/mango.jpg"
+    },
+    {
+        "id" : 4,
+        "name": "Sonal",
+        "amount": 7.99,
+        "items": "assets/itemss/chole puri.jpg"
+    },
+    {
+        "id" : 5,
+        "name": "Ankita",
+        "amount": 8.99,
+        "items": "assets/itemss/Chole-Bhature.jpg"
+    },
+    {
+        "id" : 6,
+        "name": "Amit",
+        "amount": 8.99,
+        "items": "assets/itemss/briyani.jpg"
+    },
+    {
+        "id" : 7,
+        "name": "Rahil",
+        "amount": 4.99,
+        "items": "assets/itemss/paratha.jpg"     
+    }
+]

@@ -19,6 +19,7 @@ import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { ProfilecardComponent } from './profilecard/profilecard.component';
 import { AdminactionComponent } from './adminaction/adminaction.component';
 import { EmployeetransactionComponent } from './employeetransaction/employeetransaction.component';
+import { AcceptComponent } from './accept/accept.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { EmployeetransactionComponent } from './employeetransaction/employeetran
     AdminhomeComponent,
     ProfilecardComponent,
     AdminactionComponent,
-    EmployeetransactionComponent
+    EmployeetransactionComponent,
+    AcceptComponent
   ],
   imports: [
     BrowserModule,

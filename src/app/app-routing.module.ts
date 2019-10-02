@@ -10,6 +10,7 @@ import { MexicanVendorComponent } from './mexican-vendor/mexican-vendor.componen
 import { IndianVendorComponent} from './indian-vendor/indian-vendor.component';
 import {LoginComponent} from './login/login.component';
 import {AdminactionComponent} from './adminaction/adminaction.component';
+import { AcceptComponent} from './accept/accept.component';
 
 const routes: Routes = [
  {path: '', component: HomeComponent},
@@ -19,12 +20,11 @@ const routes: Routes = [
  {path: 'indian-vendor', component: IndianVendorComponent},
  {path: 'american-vendor', component: AmericanVendorComponent},
  {path: 'mexican-vendor', component: MexicanVendorComponent},
- {
-  path:'adminhome', component:AdminhomeComponent},
+ {path:'adminhome', component:AdminhomeComponent},
   {path: 'adminact', component: AdminactionComponent},
  {path: 'login' , component: LoginComponent},
- {
-  path:'profilecar', component:ProfilecardComponent}
+ {path:'profilecar', component:ProfilecardComponent},
+ {path: 'request', component: AcceptComponent }
 ];
 
 @NgModule({
