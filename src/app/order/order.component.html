@@ -1,8 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
   <div class="container">
     <div class="row">
         <div class="col-lg-10 mx-auto col-12 text-center mb-3">
@@ -17,123 +13,38 @@
           </p>
           <div id="collapseExample" [ngbCollapse]="AmericanCollapsed">
             
-         
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Cocktails</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Lillet & Honey Spritz</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               	            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6 class="text-truncate">Hudson Valley Sour</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                		            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6 class="text-truncate">Honey Bee Tea</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                		            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Lemon Chamomile</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                		            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6>Mango Margarita</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               		            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Summer Sangria</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                		            </div>
-        </div>
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Starters</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9.95</span>
-                <h6 class="text-truncate">Wild Mushroom Ravioli</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               		            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$8.95</span>
-                <h6 class="text-truncate">Cider - Braised Pork Belly</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                		            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$7.95</span>
-                <h6 class="text-truncate">Chilled Oysters</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                		                    </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9.95</span>
-                <h6 class="text-truncate">Chicken Fried Quail</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               		              </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$8.95</span>
-                <h6 class="text-truncate">Tequila Cured Salmon</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               		                    </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Grilled Asparagus</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                              		            </div>
-        </div>
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Main Plates</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$17.95</span>
-                <h6 class="text-underline">Pan - Roasted Chicken</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
+            <div class="col-md-4" *ngFor="let n of americanVendors">
+                <div class="card mb-4 box-shadow">
+
+                    <div class="card-body">
+                        <p class="card-text">{{n.name}}<span
+                                style="float: right">${{n.price}}</span>
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input *ngIf="n===editAmericanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
+                                (keyup.enter)="update()"> 
+                            <input *ngIf="n===editAmericanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
+                                (keyup.enter)="update()">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
+                                (click)="edit(n)">
+                                Edit</button>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
+                                (click)="delete(n)">Delete</button>                                        
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$25.95</span>
-                <h6>Grilled Cauliflower Steak</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-                  </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$15.95</span>
-                <h6>Sauteed King Salmon</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-                  </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$12.95</span>
-                <h6>Sauteed Cod</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$25.95</span>
-                <h6>Roasted Duck Breast</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                              
-                  </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$14.95</span>
-                <h6>Grilled Meiller Strip</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-            </div>
+<<<<<<< HEAD
         </div>
     </div>
 <div>
+=======
+       </div>
+
+>>>>>>> 5e09fb25f972977822ab9ec2b98d824a33463b6e
     <p>
         <button type="button" class="btn btn-outline-primary" (click)="IndianCollapsed = !IndianCollapsed"
                 [attr.aria-expanded]="!IndianCollapsed" aria-controls="collapseExample">
@@ -144,71 +55,10 @@
         
      
         <!--indian-->
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Beverage</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Coffee</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6 class="text-truncate">Iced Tea</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6 class="text-truncate">Lassi</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Mango Juice</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6>Milk</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Mineral Water</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-        </div>
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Starters</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9.95</span>
-                <h6 class="text-truncate">Chana Nan</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$8.95</span>
-                <h6 class="text-truncate">Chicken 65</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$7.95</span>
-                <h6 class="text-truncate">Chicken Tikka</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
+        <div class="col-md-4" *ngFor="let n of indianVendors">
+            <div class="card mb-4 box-shadow">
 
+<<<<<<< HEAD
             </div>
             <div class="card card-body">
                 <span class="float-right font-weight-bold">$9.95</span>
@@ -256,30 +106,39 @@
                 <h6>Korma</h6>
                                 <button type="button" class="btn btn-warning">Place Order</button>
                                 
+=======
+                <div class="card-body">
+                    <p class="card-text">{{n.name}}<span
+                            style="float: right">${{n.price}}</span>
+                    </p>
+>>>>>>> 5e09fb25f972977822ab9ec2b98d824a33463b6e
 
+                    <div class="d-flex justify-content-between align-items-center">
+                        <input *ngIf="n===editIndianItem" [(ngModel)]="n.name" type="text" (blur)="update()"
+                            (keyup.enter)="update()"> 
+                        <input *ngIf="n===editIndianItem" [(ngModel)]="n.price" type="text" (blur)="update()"
+                            (keyup.enter)="update()">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
+                            (click)="edit(n)">
+                            Edit</button>
+                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
+                            (click)="delete(n)">Delete</button>                                        
+                    </div>
+                    </div>
+                </div>
             </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$25.95</span>
-                <h6>Kebab</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$14.95</span>
-                <h6>Makhni</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-        </div>
-        <div class="col-12 mt-4">
-            <hr class="accent my-5">
-        </div>
         </div>
         </div>
         <!--INDIAN-->
+<<<<<<< HEAD
 </div>
 <div>
        <p>
+=======
+    
+        <p>
+>>>>>>> 5e09fb25f972977822ab9ec2b98d824a33463b6e
             <button type="button" class="btn btn-outline-primary" (click)="MexicanCollapsed = !MexicanCollapsed"
                     [attr.aria-expanded]="!MexicanCollapsed" aria-controls="collapseExample">
               Mexican Menu
@@ -290,145 +149,40 @@
          
         <!--MEXICAN-->
 
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Cocktails</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Chocolate Martini</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6 class="text-truncate">Summer Breeze Martini</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                        
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6 class="text-truncate">Sweet Heat Margarita</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Prickly Pear</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9</span>
-                <h6>Classic Martini</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Ruby Red Rosemary Refresher</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-        </div>
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Starters</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9.95</span>
-                <h6 class="text-truncate">Fried Shrimp</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-            </div>
-                        <button type="button" class="btn btn-danger">Delete</button>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$8.95</span>
-                <h6 class="text-truncate">Tuscan Bruschetta</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$7.95</span>
-                <h6 class="text-truncate">Quesadilla</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
+        <div class="col-md-4" *ngFor="let n of mexicanVendors">
+            <div class="card mb-4 box-shadow">
+
+                <div class="card-body">
+                    <p class="card-text">{{n.name}}<span
+                            style="float: right">${{n.price}}</span>
+                    </p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <input *ngIf="n===editMexicanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
+                            (keyup.enter)="update()"> 
+                        <input *ngIf="n===editMexicanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
+                            (keyup.enter)="update()">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
+                            (click)="edit(n)">
+                            Edit</button>
+                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
+                            (click)="delete(n)">Delete</button>                                        
                     </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$9.95</span>
-                <h6 class="text-truncate">Wings</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-                      </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$8.95</span>
-                <h6 class="text-truncate">Ultimate Nacho Platter</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-                      </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$10</span>
-                <h6 class="text-truncate">Stuffed Clams</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-            </div>
-        </div>
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Main Plates</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$17.95</span>
-                <h6 class="text-underline">Fat Tuesday Salad</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
                     </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$25.95</span>
-                <h6>Braised Boneless Beef Short Ribs</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
                 </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$15.95</span>
-                <h6>Jambalaya</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-                    </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$12.95</span>
-                <h6>Stuffed Jumbo Shrimp</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                               
-                    </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$25.95</span>
-                <h6>Sirloin Steak Tips</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                                
-                    </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">$14.95</span>
-                <h6>Pasta Pomodoro</h6>
-                                <button type="button" class="btn btn-warning">Place Order</button>
-                            
+            </div>
         </div>
-        <div class="col-12 mt-4">
-            <hr class="accent my-5">
-        </div>
-        <div class="col-6 mx-auto">
-            <div class="card card-body text-center">
-                <h5 class="text-uppercase">Tuesday Only!</h5>
-                <h6>Albondigas Soup</h6>
-                        </div>
-        </div>
-        <div class="col-12 mt-4">
-            <hr class="accent my-5">
-        </div>
+        
         <!--MEXICAN-->
         </div>
 </div>
     </div>
+<<<<<<< HEAD
 </div>
 </div>
+=======
+    </div>
+
+
+>>>>>>> 5e09fb25f972977822ab9ec2b98d824a33463b6e
