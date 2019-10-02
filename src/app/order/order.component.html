@@ -12,7 +12,7 @@
             </button>
           </p>
           <div id="collapseExample" [ngbCollapse]="AmericanCollapsed">
-            
+
             <div class="col-md-4" *ngFor="let n of americanVendors">
                 <div class="card mb-4 box-shadow">
 
@@ -23,7 +23,7 @@
 
                         <div class="d-flex justify-content-between align-items-center">
                             <input *ngIf="n===editAmericanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                                (keyup.enter)="update()"> 
+                                (keyup.enter)="update()">
                             <input *ngIf="n===editAmericanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
                                 (keyup.enter)="update()">
                         <div class="btn-group">
@@ -31,14 +31,15 @@
                                 (click)="edit(n)">
                                 Edit</button>
                             <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                                (click)="delete(n)">Delete</button>                                        
+                                (click)="delete(n)">Delete</button>
                         </div>
                         </div>
                     </div>
                 </div>
             </div>
-       </div>
-
+        </div>
+    </div>
+<div>
     <p>
         <button type="button" class="btn btn-outline-primary" (click)="IndianCollapsed = !IndianCollapsed"
                 [attr.aria-expanded]="!IndianCollapsed" aria-controls="collapseExample">
@@ -46,8 +47,8 @@
         </button>
       </p>
       <div id="collapseExample" [ngbCollapse]="IndianCollapsed">
-        
-     
+
+
         <!--indian-->
         <div class="col-md-4" *ngFor="let n of indianVendors">
             <div class="card mb-4 box-shadow">
@@ -59,7 +60,7 @@
 
                     <div class="d-flex justify-content-between align-items-center">
                         <input *ngIf="n===editIndianItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                            (keyup.enter)="update()"> 
+                            (keyup.enter)="update()">
                         <input *ngIf="n===editIndianItem" [(ngModel)]="n.price" type="text" (blur)="update()"
                             (keyup.enter)="update()">
                     <div class="btn-group">
@@ -67,7 +68,7 @@
                             (click)="edit(n)">
                             Edit</button>
                         <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                            (click)="delete(n)">Delete</button>                                        
+                            (click)="delete(n)">Delete</button>
                     </div>
                     </div>
                 </div>
@@ -75,7 +76,7 @@
         </div>
         </div>
         <!--INDIAN-->
-    
+
         <p>
             <button type="button" class="btn btn-outline-primary" (click)="MexicanCollapsed = !MexicanCollapsed"
                     [attr.aria-expanded]="!MexicanCollapsed" aria-controls="collapseExample">
@@ -83,8 +84,8 @@
             </button>
           </p>
           <div id="collapseExample" [ngbCollapse]="MexicanCollapsed">
-            
-         
+
+
         <!--MEXICAN-->
 
         <div class="col-md-4" *ngFor="let n of mexicanVendors">
@@ -97,7 +98,7 @@
 
                     <div class="d-flex justify-content-between align-items-center">
                         <input *ngIf="n===editMexicanItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                            (keyup.enter)="update()"> 
+                            (keyup.enter)="update()">
                         <input *ngIf="n===editMexicanItem" [(ngModel)]="n.price" type="text" (blur)="update()"
                             (keyup.enter)="update()">
                     <div class="btn-group">
@@ -105,17 +106,15 @@
                             (click)="edit(n)">
                             Edit</button>
                         <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                            (click)="delete(n)">Delete</button>                                        
+                            (click)="delete(n)">Delete</button>
                     </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!--MEXICAN-->
         </div>
 </div>
     </div>
     </div>
-
-

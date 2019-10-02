@@ -10,7 +10,6 @@ import {MexicanVendorService } from '../mexican-vendor/mexican-vendor.service';
 })
 export class OrderComponent implements OnInit {
 
-
   indianVendors: IndianVendor[];
   errorMsg: any;
   editIndianItem: IndianVendor;
@@ -40,5 +39,3 @@ export class OrderComponent implements OnInit {
   public IndianCollapsed = false;
   public MexicanCollapsed = false;
 }
-
-

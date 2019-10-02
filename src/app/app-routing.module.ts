@@ -13,15 +13,13 @@ import {AdminactionComponent} from './adminaction/adminaction.component';
 
 const routes: Routes = [
  {path: '', component: HomeComponent},
- 
+
  {path: 'Employee', component: EmployeeComponent},
  {path: 'Order', component: OrderComponent},
  {path: 'indian-vendor', component: IndianVendorComponent},
  {path: 'american-vendor', component: AmericanVendorComponent},
-
  {path: 'mexican-vendor', component: MexicanVendorComponent},
- {
-  path:'adminhome', component:AdminhomeComponent},
+ {path:'adminhome', component:AdminhomeComponent},
   {path: 'adminact', component: AdminactionComponent},
  {path: 'login' , component: LoginComponent},
  {
