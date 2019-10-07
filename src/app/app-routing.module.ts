@@ -10,27 +10,21 @@ import { MexicanVendorComponent } from './mexican-vendor/mexican-vendor.componen
 import { IndianVendorComponent} from './indian-vendor/indian-vendor.component';
 import {LoginComponent} from './login/login.component';
 import {AdminactionComponent} from './adminaction/adminaction.component';
-import { AmericanProfileComponent } from './american-profile/american-profile.component';
-import { MexicanprofileComponent } from './mexicanprofile/mexicanprofile.component';
-import { IndianprofileComponent} from './indianprofile/indianprofile.component';
+import { AcceptComponent} from './accept/accept.component';
 
 const routes: Routes = [
  {path: '', component: HomeComponent},
- 
+
  {path: 'Employee', component: EmployeeComponent},
  {path: 'Order', component: OrderComponent},
  {path: 'indian-vendor', component: IndianVendorComponent},
  {path: 'american-vendor', component: AmericanVendorComponent},
  {path: 'mexican-vendor', component: MexicanVendorComponent},
- {path: 'indian-profile', component: IndianprofileComponent},
- {path: 'american-profile', component: AmericanProfileComponent},
- {path: 'mexican-profile', component: MexicanprofileComponent},
- {
-  path:'adminhome', component:AdminhomeComponent},
+ {path:'adminhome', component:AdminhomeComponent},
   {path: 'adminact', component: AdminactionComponent},
  {path: 'login' , component: LoginComponent},
- {
-  path:'profilecar', component:ProfilecardComponent}
+ {path:'profilecar', component:ProfilecardComponent},
+ {path: 'request', component: AcceptComponent }
 ];
 
 @NgModule({
