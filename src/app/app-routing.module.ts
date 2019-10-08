@@ -19,16 +19,12 @@ const routes: Routes = [
  {path: 'Order', component: OrderComponent},
  {path: 'indian-vendor', component: IndianVendorComponent},
  {path: 'american-vendor', component: AmericanVendorComponent},
-<<<<<<< HEAD
- {path: 'mexican-vendor', component: MexicanVendorComponent} 
-=======
  {path: 'mexican-vendor', component: MexicanVendorComponent},
  {path:'adminhome', component:AdminhomeComponent},
   {path: 'adminact', component: AdminactionComponent},
  {path: 'login' , component: LoginComponent},
  {path:'profilecar', component:ProfilecardComponent},
  {path: 'request', component: AcceptComponent }
->>>>>>> 2327412ad76890e03d40e3d56bd154e5bf9f8b05
 ];
 
 @NgModule({

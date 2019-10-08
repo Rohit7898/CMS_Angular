@@ -6,21 +6,5 @@
     "id" : "86254",
     "contact" : "6579843299",
     "balance" : "$850"
-},
-{
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjlZJz5oG7KfYCygbZAKnwC3nLQFingmZvEXcPz7mwp9siqJMM",
-    "name" : "David",
-    "title" : "Team Lead",
-    "id" : "86508",
-    "contact" : "4863570882",
-    "balance" : "$1400"
-},
-{
-    "image": "Priya.jpg.jpg",
-    "name" : "Priya",
-    "title" : "Software Engineer",
-    "id" : "86468",
-    "contact" : "2486066856",
-    "balance" : "$940"
 }
 ]
