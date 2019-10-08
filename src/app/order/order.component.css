@@ -19,3 +19,38 @@
     font-family: 'Lobster', cursive;
   }
   
+  #sticky-footer {
+    background :rgb(0,0,0);
+  flex-shrink: none;
+  
+}
+
+
+.navbar-brand{
+
+	font-weight: 600;
+	font-size: 1.5em;
+
+}
+
+.navbar-dark .navbar-brand{
+
+	color:#dcdde1;
+
+
+}
+
+.nav-item{
+
+	font-weight: 600;
+	text-transform: uppercase;
+	padding-left: 10px;
+
+}
+
+.navbar-dark .navbar-nav .nav-item .nav-link:hover{
+      
+      background: #dcdde1;
+      color: #262626;
+   
+   }

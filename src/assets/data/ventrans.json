@@ -1,0 +1,54 @@
+[
+    {    "id":1,
+        "employeename":"Prasanna",
+        "empid":49123,
+        "itemname": "Coffee",
+        "price": 6.00
+        
+        
+    },
+    {         
+        "id": 2,
+        "employeename":"Rohit",
+        "empid":49124,
+        "itemname": "Lassi",
+        "price": 9.00
+        
+        
+    },
+    {
+        "id": 3,
+        "employeename":"Priyanka",
+        "empid":49125,
+        "itemname": "Milk",
+        "price": 7.50
+    },
+    {
+        "id": 4,
+        "employeename":"Prasanna",
+        "empid":49123,
+        "itemname": "Pappada",
+        "price": 10.50
+    },
+    {
+        "id": 5,
+        "employeename":"Rohit",
+        "empid":49124,
+        "itemname": "Chana Naan",
+        "price": 4.99
+    },
+    {  
+        "id": 6,
+        "employeename":"Priyanka",
+        "empid":49125,
+        "itemname": "Chicken Tikka",
+        "price": 9.99
+    },
+    {
+        "id": 7,
+        "employeename":"Priyanka",
+        "empid":49125,
+        "itemname": "Dal Makhni",
+        "price": 10.50   
+    }
+]

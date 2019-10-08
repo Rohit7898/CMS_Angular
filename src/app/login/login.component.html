@@ -1,5 +1,23 @@
 
-
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#"><img src="assets/images/logo.png" style="width:50px"></a>
+      
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- <li class="nav-item">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="./login">Log In</button>
+          </li> -->
+           <li class="nav-item">
+            <a class="nav-link" routerLink="./login">Log In <span class="sr-only">(current)</span></a>
+          </li> 
+          <li class="nav-item">
+              <a class="nav-link" routerLink="../home">Main Menu <span class="sr-only">(current)</span></a>
+            </li> 
+        </ul>
+      </nav>
+  </header>
 
 
     <!-- <div class="header">
@@ -16,15 +34,15 @@
       
           <div class= "container-fluid h-100">
               <div class = "d-flex flex-column justify-content-center h-100 align-items-center  p-4 ">
-                  <h1 class= "company-name">LOGIN</h1>
-                  <form  (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                  <h1 class= "company-name" >LOGIN</h1>
+                  <form  (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
                         <div class="form-group">
                              <input type="text"
                                 class="form-control" id="username" placeholder="Username"
                                 required
                                 minlength="4"
                                [(ngModel)]="model.username" name="username"
-                                #username="ngModel" >
+                                #username="ngModel" style="width:500px" >
                             <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger"> 
                               <div *ngIf="username.errors.required">
                               Username is required.
@@ -32,45 +50,68 @@
                                
                                     <div *ngIf="username.errors.minlength">
                                     Username must be atleast of 4 charcters
-                                   </div>
-                                
-                               
-                        </div>
-                    </div>
-                        <div class="form-group">
-                             <input type="text"
-                                class="form-control" id="password"
-                                required
-                                minlength="4"
-                               [(ngModel)]="model.password" name="password" placeholder="Password"
-                                #password="ngModel">
-                                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger"> 
-                                        <div *ngIf="password.errors.required">
-                                        password is required.
-                                      </div>
-                                         
-                                              <div *ngIf="password.errors.minlength">
-                                              password must be atleast of 4 charcters
-                                             </div>
-                                          
+                                       
+                                              
                                          
                                   </div>
                               </div>
+
+                              </div>
+
+                        <div class="form-group">
+
+                          <input type="text"
+
+                             class="form-control" id="password"
+
+                             required
+
+                             minlength="4"
+
+                            [(ngModel)]="model.password" name="password" placeholder="Password"
+
+                             #password="ngModel">
+
+                             <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger"> 
+
+                                     <div *ngIf="password.errors.required">
+
+                                     password is required.
+
+                                   </div>
+
+                                      
+
+                                           <div *ngIf="password.errors.minlength">
+
+                                           password must be atleast of 4 charcters
+
+                                          </div>
+
+                                       
+
+                                      
+
+                               </div>
+
+                           </div>
                         
                         <div class="form-group">
                              <select class="form-control"
                                 id="role" required
                           [(ngModel)]="model.role"
                                 name="role"
-                                #role="ngModel"  >
+                                #role="ngModel" style="width:500px" >
+                                <option value="" disabled selected>select a Role</option>
                                 <option *ngFor="let p of roles" [value]="p" >{{p}}</option>
                             <!-- </select> -->
-                            <div *ngIf="role.invalid && (role.dirty || role.touched)" class="alert alert-danger"> 
+                          </select>
+                            <div *ngIf="role.invalid && role.touched" class="alert alert-danger"> 
                                     <div *ngIf="role.errors.required">
                                     role is required.
                                   </div>
                         </div>
-                    </select>
+                    
                         </div>
                 
                         <button type="submit"  [disabled] ="loginForm.form.invalid" class="btn btn-success">Submit</button>
@@ -110,3 +151,19 @@
     
     </div>
     </section>
+
+    <footer id="sticky-footer" class="py-4 text-white-50">
+        <div class="container ">
+            <div class = "d-flex flex-column justify-content-center align-items-center p-1">
+             <div class="col-lg-1 col-md-8 mb-2">
+           <!--  <div class="view overlay z-depth-1-half">-->
+            <img src="assets/images/logo.png" class="img-fluid"
+                  alt="">
+                  <a href="">
+                     <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+            <small>&copy;2019 AAR</small>
+          </div>
+          </div>
+      </footer>

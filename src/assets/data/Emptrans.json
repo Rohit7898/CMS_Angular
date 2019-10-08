@@ -1,0 +1,48 @@
+[
+    {    "id":1,
+        "Vendor":"Indian",
+        "itemname": "Coffee",
+        "price": 6.00
+        
+        
+    },
+    {         
+        "id": 2,
+        "Vendor":"American",
+        "itemname": "Milk",
+        "price": 7.50
+        
+        
+    },
+    {
+        "id": 3,
+        "Vendor":"American",
+        "itemname": "Cheakpea Salad",
+        "price": 10.99
+    },
+    {
+        "id": 4,
+        "Vendor":"Indian",
+        "itemname": "Lassi",
+        "price": 9.00
+    },
+    {
+        "id": 5,
+        "Vendor":"Mexican",
+        "itemname": "Duipaza",
+        "price": 11.00
+    },
+    {  
+        "id": 6,
+        "Vendor":"Indian",
+        "itemname": "Chana Nan",
+        "price": 4.99
+       
+    },
+    {
+        "id": 7,
+        "Vendor":"Indian",
+        "itemname": "Pappada",
+        "price": 10.50  
+    }
+]

@@ -1,14 +1,14 @@
- <section id = "header">
+ <!-- <section id = "header">
     <div class ="container - fluid">
         <nav class = "navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#"><img src="../../assets/images/logo.png" style="width:50px"></a>
 
-            <div class = "container"> 
+            <div class = "container">  -->
                 <!--<a href="#" class="navbar-brand">  <img src ="logo.png" style="width:50px"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls ="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class ="navbar-toggler-icon"></span>
                 </button>-->
-                 <div class="collapse navbar-collapse" id ="navbarSupportedContent">
+                 <!-- <div class="collapse navbar-collapse" id ="navbarSupportedContent">
                 <ul class ="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" routerLink="../profilecar"> MyProfile</a>
@@ -24,7 +24,32 @@
         </div>
     </nav>
 </div>
-</section> 
+</section>  -->
+
+<header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#"><img src="assets/images/logo.png" style="width:50px"></a>
+          
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+              <!-- <li class="nav-item">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="./login">Log In</button>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="../profilecar">Profile <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" routerLink="../adminact">Add/Delete Vendor <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                        <a class="nav-link" routerLink="../home">Logout <span class="sr-only">(current)</span></a>
+                      </li>
+            </ul>
+          </nav>
+      </header>
+
+
 <section class = "main">
 <div class="container">
     <div class ="row">
@@ -52,4 +77,19 @@
 </div>
 </footer> -->
 <!-- Footer -->
+<footer id="sticky-footer" class="py-4 text-white-50">
+        <div class="container ">
+            <div class = "d-flex flex-column justify-content-center align-items-center p-1">
+             <div class="col-lg-1 col-md-8 mb-2">
+           <!--  <div class="view overlay z-depth-1-half">-->
+            <img src="assets/images/logo.png" class="img-fluid"
+                  alt="">
+                  <a href="">
+                     <div class="mask rgba-white-light"></div>
+                </a>
+              </div>
+            <small>&copy;2019 AAR</small>
+          </div>
+          </div>
+      </footer>
 

@@ -10,9 +10,12 @@ import { MexicanVendorComponent } from './mexican-vendor/mexican-vendor.componen
 import { IndianVendorComponent} from './indian-vendor/indian-vendor.component';
 import {LoginComponent} from './login/login.component';
 import {AdminactionComponent} from './adminaction/adminaction.component';
+import {EmployeetransactionComponent } from './employeetransaction/employeetransaction.component';
+import {VendortransactionComponent} from './vendortransaction/vendortransaction.component';
 
 const routes: Routes = [
  {path: '', component: HomeComponent},
+ {path:'home',component:HomeComponent},
  
  {path: 'Employee', component: EmployeeComponent},
  {path: 'Order', component: OrderComponent},
@@ -22,6 +25,8 @@ const routes: Routes = [
  {
   path:'adminhome', component:AdminhomeComponent},
   {path: 'adminact', component: AdminactionComponent},
+  {path: 'emptran', component:EmployeetransactionComponent  },
+  {path: 'vendortran', component:VendortransactionComponent  },
  {path: 'login' , component: LoginComponent},
  {
   path:'profilecar', component:ProfilecardComponent}
