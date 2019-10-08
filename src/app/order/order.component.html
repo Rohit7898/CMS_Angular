@@ -12,17 +12,19 @@
           </li>
         </ul>
       </nav>
+      <section id="order">
   <div class="container">
     
         <div class="col-lg-10 mx-auto col-12 text-center mb-3">
             <h1 class="hh mt-0 text-primary">Our Menu</h1>
-            <p class="hh lead">Begin with a selection from our award winning beverage menu or choose a wine from our extensive wine list. Our wine list features over 100 different vintages and has received the chamber of commerce award of excellence.</p>
+            <p class="hh lead" style="color: white">Begin with a selection from our award winning beverage menu or choose a wine from our extensive wine list. Our wine list features over 100 different vintages and has received the chamber of commerce award of excellence.</p>
         </div>
-        <div><p>
-            <button type="button" class="btn btn-outline-primary" (click)="AmericanCollapsed = !AmericanCollapsed"
+        <div class="row text-center">
+        <p>
+            <button type="button" class="btn btn-primary" (click)="AmericanCollapsed = !AmericanCollapsed"
                     [attr.aria-expanded]="!AmericanCollapsed" aria-controls="collapseExample">
               American Menu
-            </button>
+            </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <div id="collapseExample" [ngbCollapse]="AmericanCollapsed">
             <div class="row">
@@ -54,10 +56,10 @@
        </div>
 
     <p>
-        <button type="button" class="btn btn-outline-primary" (click)="IndianCollapsed = !IndianCollapsed"
+        <button type="button" class="btn btn-primary" (click)="IndianCollapsed = !IndianCollapsed"
                 [attr.aria-expanded]="!IndianCollapsed" aria-controls="collapseExample">
           Indian Menu
-        </button>
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </p>
       <div id="collapseExample" [ngbCollapse]="IndianCollapsed">
         <div class="row">
@@ -89,7 +91,7 @@
         <!--INDIAN-->
     
         <p>
-            <button type="button" class="btn btn-outline-primary" (click)="MexicanCollapsed = !MexicanCollapsed"
+            <button type="button" class="btn btn-primary" (click)="MexicanCollapsed = !MexicanCollapsed"
                     [attr.aria-expanded]="!MexicanCollapsed" aria-controls="collapseExample">
               Mexican Menu
             </button>
@@ -124,33 +126,27 @@
         </div>
     </div>
           </div>
+        </div>
         <!--MEXICAN-->
         <br>
             <hr>
             <p>
-                    <button type="button" class="btn btn-outline-primary" (click)="CartCollapsed = !CartCollapsed"
+                    <button type="button" class="btn btn-primary" (click)="CartCollapsed = !CartCollapsed"
                             [attr.aria-expanded]="!CartCollapsed" aria-controls="collapseExample">
                       Cart
                     </button>
                   </p>
                   <div id="collapseExample" [ngbCollapse]="CartCollapsed">
-            <section id="addmoney" style="float: right;">
-                <h3>Add Balance</h3>
-                <hr>
-
-
-                <input type="number" [(ngModel)]="amount" placeholder="Enter Amount" min="1" required> <br><br>
-                <button class="btn btn-sm btn-outline-success" (click)="addBalance()">Add Money to Wallet</button>
-            </section>
+            
 
             <section id="mycart" style="position: inherit;">
                 <h3>My Orders</h3>
-                <table style="width: 40%" class="table table-hover">
+                <table style="width: 40%" class="table table-hover table-dark">
                     <thead>
                         <tr>
                             <th scope="col">Item Name</th>
                             <th scope="col">Item Price</th>
-                            <th scope="col">Remove</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -158,20 +154,20 @@
 
                             <td>{{l.name}}</td>
                             <td>${{l.price}}</td>
-                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem1(l)">x</button></td>
+                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem1(l)">Remove</button></td>
                         </tr>
                         <tr *ngFor="let l of list2" let result=0>
 
                             <td>{{l.name}}</td>
                             <td>${{l.price}}</td>
-                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem2(l)">x</button></td>
+                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem2(l)">Remove</button></td>
                         </tr>
 
                         <tr *ngFor="let l of list3" let result=0>
 
                             <td>{{l.name}}</td>
                             <td>${{l.price}}</td>
-                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem3(l)">x</button></td>
+                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem3(l)">Remove</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -183,7 +179,22 @@
 
             </section>
         </div>
+        <p>
+                <button type="button" class="btn btn-primary" (click)="AddCollapsed = !AddCollapsed"
+                        [attr.aria-expanded]="!AddCollapsed" aria-controls="collapseExample">
+                        Add Balance
+                </button>
+              </p>
+              <div id="collapseExample" [ngbCollapse]="AddCollapsed">
+        <section id="addmoney" style="float: inherit;">
+           
+            
+            <input type="number" [(ngModel)]="amount" placeholder="Enter Amount" min="1" required> <br><br>
+            <button class="btn btn-sm btn-outline-success" (click)="addBalance()">Add Money to Wallet</button>
+        </section>
+        </div>
 </div>
+</section>
  
 
 

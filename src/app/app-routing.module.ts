@@ -11,10 +11,13 @@ import { IndianVendorComponent} from './indian-vendor/indian-vendor.component';
 import {LoginComponent} from './login/login.component';
 import {AdminactionComponent} from './adminaction/adminaction.component';
 import { AcceptComponent} from './accept/accept.component';
+import { AmericanProfileComponent } from './american-profile/american-profile.component';
+import { IndianprofileComponent } from './indianprofile/indianprofile.component';
+import { MexicanprofileComponent } from './mexicanprofile/mexicanprofile.component';
 
 const routes: Routes = [
  {path: '', component: HomeComponent},
- 
+
  {path: 'Employee', component: EmployeeComponent},
  {path: 'Order', component: OrderComponent},
  {path: 'indian-vendor', component: IndianVendorComponent},
@@ -24,7 +27,10 @@ const routes: Routes = [
   {path: 'adminact', component: AdminactionComponent},
  {path: 'login' , component: LoginComponent},
  {path:'profilecar', component:ProfilecardComponent},
- {path: 'request', component: AcceptComponent }
+ {path: 'request', component: AcceptComponent },
+ {path: 'aprofile', component: AmericanProfileComponent},
+ { path: 'iprofile', component: IndianprofileComponent},
+ { path: 'mprofile', component: MexicanprofileComponent}
 ];
 
 @NgModule({

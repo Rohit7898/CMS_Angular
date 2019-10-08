@@ -47,6 +47,8 @@ export class OrderComponent implements OnInit {
   public IndianCollapsed = true;
   public MexicanCollapsed = true;
   public CartCollapsed = true;
+  public AddCollapsed = true;
+
   details1(ind: IndianVendor)
     {            
       if(this.list1.length == 0)
