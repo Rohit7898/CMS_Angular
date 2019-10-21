@@ -14,10 +14,12 @@ import { AcceptComponent} from './accept/accept.component';
 import { AmericanProfileComponent } from './american-profile/american-profile.component';
 import { IndianprofileComponent } from './indianprofile/indianprofile.component';
 import { MexicanprofileComponent } from './mexicanprofile/mexicanprofile.component';
+import { EmployeetransactionComponent } from './employeetransaction/employeetransaction.component';
+import { VendortransactionComponent } from './vendortransaction/vendortransaction.component';
 
 const routes: Routes = [
  {path: '', component: HomeComponent},
-
+ {path: 'home', component: HomeComponent},
  {path: 'Employee', component: EmployeeComponent},
  {path: 'Order', component: OrderComponent},
  {path: 'indian-vendor', component: IndianVendorComponent},
@@ -30,7 +32,9 @@ const routes: Routes = [
  {path: 'request', component: AcceptComponent },
  {path: 'aprofile', component: AmericanProfileComponent},
  { path: 'iprofile', component: IndianprofileComponent},
- { path: 'mprofile', component: MexicanprofileComponent}
+ { path: 'mprofile', component: MexicanprofileComponent},
+ {path: 'etran', component:EmployeetransactionComponent  },
+ {path: 'vtran', component:VendortransactionComponent  },
 ];
 
 @NgModule({

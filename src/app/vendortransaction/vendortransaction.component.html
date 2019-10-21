@@ -1,0 +1,126 @@
+
+<header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#"><img src="assets/images/logo.png" style="width:50px"></a>
+          
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+              <!-- <li class="nav-item">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="./login">Log In</button>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="../american-vendor">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" routerLink="../home">Logout <span class="sr-only">(current)</span></a>
+                  </li>
+            </ul>
+          </nav>
+      </header>
+
+
+
+<section class = "vetran">
+        <div class="mytwo">
+          <!-- <div class= "container-fluid h-100">
+           <div class = "d-flex flex-column justify-content-center h-100 align-items-center p-4">
+            <div style="text-align:left">
+               <h1>
+                   {{ title }}
+               </h1>
+           
+               <table > -->
+                   <!-- ADD HEADERS -->
+                   <!-- <tr>
+                       <th>ID</th>
+                           <th> EmpName</th>
+                           <th>EmpID</th>
+                           <th>ItemName</th>
+                               <th>Price</th>
+                   </tr> -->
+           
+                   <!-- BIND ARRAY TO TABLE -->
+                   <!-- <tr *ngFor="let v of vtrans">
+                       <td>{{v.id}}</td>
+                       <td>{{v.employeename}}</td>
+                           <td>{{v.empid}}</td>
+                               <td>{{v.itemname}}</td>
+                               <td>{{v.price}}</td>
+                   </tr>
+               </table>
+           </div>
+       </div>
+       </div> -->
+
+       <main role="main">
+
+          <section class="jumbotron text-center">
+              <div class="container">
+                  <h1 class="jumbotron-heading">Order History</h1>
+      
+      
+      
+              </div>
+          </section>
+      
+          <div class="album py-5 bg-light">
+              <div class="container text-center">
+      
+                  <div class="row text-center">
+                      <div class="col-md-12 text-center">
+                          <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>ID</th>
+                                  <th>EmpName</th>
+                                  <th>EmpID</th>
+                                  <th>ItemName</th>
+                                  <th>Price($)</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let v of vtrans">
+                                  <td style="width: 150px"><strong>{{v.id}}</strong></td>
+                                  <td style="width: 150px"><strong>{{v.employeename}}</strong></td>
+                                  <td style="width: 150px"><strong>{{v.empid}}</strong></td>
+                                  
+                                  <td style="width: 150px"><strong>{{v.itemname}}</strong></td>
+                                  <td style="width: 150px"><strong>{{v.price}}</strong></td>
+                                  
+                             </tr>
+                          </tbody>
+      
+                          </table>
+      
+                      </div>
+      
+      
+                  </div>
+              </div>
+          </div>
+      
+      
+      
+      </main>
+       
+
+
+
+       </div>
+       </section>
+
+       <!-- <footer id="sticky-footer" class="py-4 text-white-50">
+            <div class="container ">
+                <div class = "d-flex flex-column justify-content-center align-items-center p-1">
+                 <div class="col-lg-1 col-md-8 mb-2">
+                <img src="assets/images/logo.png" class="img-fluid"
+                      alt="">
+                      <a href="">
+                         <div class="mask rgba-white-light"></div>
+                    </a>
+                  </div>
+                <small>&copy;2019 AAR</small>
+              </div>
+              </div>
+          </footer> -->

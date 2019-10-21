@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "vendorname": "American",
+        "address" : "3845, Peachtree Road, Downtown, Atlanta, GA-30345",
+
+        "emailid" : "david@gmail.com",
+
+        "contact" : "2485039579",
+
+        "balance" : "$8000"
+        
+    },
+    {         
+        "id": 2,
+        "vendorname": "Indian",
+        "address" : "7098,, Downtown, Atlanta, GA-30209",
+
+        "emailid" : "priyanka@gmail.com",
+
+        "contact" : "6570982392",
+
+        "balance" : "$16947"
+        
+    },
+    {
+        "id" : 3,
+        "vendorname": "Mexican",
+        
+        "address" : "9988, Baker'street, Atlanta, GA-37877",
+
+        "emailid" : "robert@gmail.com",
+
+        "contact" : "6493280987",
+
+        "balance" : "$16894"
+        
+    }
+]

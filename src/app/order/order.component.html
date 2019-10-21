@@ -8,6 +8,12 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="">Log Out</button>
           </li>
           <li class="nav-item">
+                <a class="nav-link" routerLink="/etran">History <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" routerLink="/Employee">Profile <span class="sr-only">(current)</span></a>
+                </li>
+          <li class="nav-item">
             <a class="nav-link" routerLink="#">About us <span class="sr-only">(current)</span></a>
           </li>
         </ul>
@@ -140,7 +146,7 @@
             
 
             <section id="mycart" style="position: inherit;">
-                <h3>My Orders</h3>
+                <h3 style="color: white">My Orders</h3>
                 <table style="width: 40%" class="table table-hover table-dark">
                     <thead>
                         <tr>
@@ -172,7 +178,7 @@
                     </tbody>
                 </table>
                 <br>
-                <h2>Total : ${{total}} </h2>
+                <h2 style="color: white">Total : ${{total}} </h2>
 
                 <button *ngIf="list1.length>0 || list2.length>0 || list3.length" class=" btn btn-outline-primary btn-lg"
                     (click)="checkOut(l)">Checkout</button>

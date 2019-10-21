@@ -23,6 +23,7 @@ import { AmericanProfileComponent } from './american-profile/american-profile.co
 import { IndianprofileComponent } from './indianprofile/indianprofile.component';
 import { MexicanprofileComponent } from './mexicanprofile/mexicanprofile.component';
 import { AcceptComponent } from './accept/accept.component';
+import { VendortransactionComponent } from './vendortransaction/vendortransaction.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AcceptComponent } from './accept/accept.component';
     EmployeetransactionComponent,
     AmericanProfileComponent,
     IndianprofileComponent,
-    MexicanprofileComponent
+    MexicanprofileComponent,
+    VendortransactionComponent
   ],
   imports: [
     BrowserModule,

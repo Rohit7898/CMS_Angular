@@ -1,6 +1,6 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 250px;
+    max-width: 210px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -13,15 +13,15 @@
   
   
   
-  a {
+  /* a {
     text-decoration: none;
     font-size: 22px;
     color: black;
   }
-  
-  button:hover, a:hover {
+   */
+  /* button:hover, a:hover {
     opacity: 0.7;
-  }
+  } */
   
   .contact{
     border: none;
@@ -37,9 +37,9 @@
   
   }
   
-  #header{
+  /* #header{
     background : rgb(0,0,0);
-  }
+  } */
   
   
   
@@ -64,18 +64,18 @@
     color: Red;
   }
   
-  .navbar{
+  /* .navbar{
   
     padding: 50px 0;
-  }
+  } */
   
-  .navbar-brand{
+  /* .navbar-brand{
   
     font-weight: 600;
     font-size: 1.5em;
   
   }
-  
+   */
   .navbar-dark .navbar-brand{
   
     color:#dcdde1;
