@@ -18,151 +18,43 @@
         </ul>
       </nav>
   </header>
-
-
-    <!-- <div class="header">
-        <a href="#" class="logo"><img src ="../../assets/images/logo.png" style="width:50px"></a>
-        <div class="header-right">
-          <a class="active" href="#home">Home</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
+  <section class="myown">
+    <div class="log">
+      <div class= "container-fluid h-100">
+        <div class = "d-flex flex-column justify-content-center h-100 align-items-center  p-4 ">
+          <h1 class= "company-name" >LOGIN</h1>
+          <form  (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+            <div class="form-group">
+              <input type="text" id="usr_username" class="fadeIn third" name="username" 
+              placeholder="Username" required [(ngModel)]="userData.username">
+              <!-- <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger"> 
+                <div *ngIf="username.errors.required">Username is required.</div>
+                <div *ngIf="username.errors.minlength">Username must be atleast of 4 charcters</div>
+              </div> -->
+            </div>
+            <div class="form-group">
+              <input type="password" id="usr_password" class="fadeIn fourth" name="password" 
+              placeholder="Password" required [(ngModel)]="userData.password">
+              <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger"> 
+              <div *ngIf="password.errors.required">password is required.</div>
+              <div *ngIf="password.errors.minlength">password must be atleast of 4 charcters</div>
+              </div> -->
+            </div>
+            <div class="form-group">
+              <select name="type" class="fadeIn second" id="type"
+                [(ngModel)]="userData.type">
+                <option value="Employee">Employee</option>
+                <option value="Vendor">Vendor</option>
+                <option value="Admin">Admin</option>>
+              </select>
+              <!-- <div *ngIf="role.invalid && role.touched" class="alert alert-danger"> 
+              <div *ngIf="role.errors.required">role is required.</div>
+              </div> -->
+            </div>
+            <button type="submit"   class="btn btn-success">Submit</button>
+          </form>
         </div>
-      </div> -->
-      
-      <section class="myown">
-       <div class="log">
-      
-          <div class= "container-fluid h-100">
-              <div class = "d-flex flex-column justify-content-center h-100 align-items-center  p-4 ">
-                  <h1 class= "company-name" >LOGIN</h1>
-                  <form  (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
-                        <div class="form-group">
-                             <input type="text"
-                                class="form-control" id="username" placeholder="Username"
-                                required
-                                minlength="4"
-                               [(ngModel)]="model.username" name="username"
-                                #username="ngModel" style="width:500px" >
-                            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger"> 
-                              <div *ngIf="username.errors.required">
-                              Username is required.
-                            </div>
-                               
-                                    <div *ngIf="username.errors.minlength">
-                                    Username must be atleast of 4 charcters
-                                       
-                                              
-                                         
-                                  </div>
-                              </div>
-
-                              </div>
-
-                        <div class="form-group">
-
-                          <input type="text"
-
-                             class="form-control" id="password"
-
-                             required
-
-                             minlength="4"
-
-                            [(ngModel)]="model.password" name="password" placeholder="Password"
-
-                             #password="ngModel">
-
-                             <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger"> 
-
-                                     <div *ngIf="password.errors.required">
-
-                                     password is required.
-
-                                   </div>
-
-                                      
-
-                                           <div *ngIf="password.errors.minlength">
-
-                                           password must be atleast of 4 charcters
-
-                                          </div>
-
-                                       
-
-                                      
-
-                               </div>
-
-                           </div>
-                        
-                        <div class="form-group">
-                             <select class="form-control"
-                                id="role" required
-                          [(ngModel)]="model.role"
-                                name="role"
-                                #role="ngModel" style="width:500px" >
-                                <option value="" disabled selected>select a Role</option>
-                                <option *ngFor="let p of roles" [value]="p" >{{p}}</option>
-                            <!-- </select> -->
-                          </select>
-                            <div *ngIf="role.invalid && role.touched" class="alert alert-danger"> 
-                                    <div *ngIf="role.errors.required">
-                                    role is required.
-                                  </div>
-                        </div>
-                    
-                        </div>
-                
-                        <button type="submit"  [disabled] ="loginForm.form.invalid" class="btn btn-success">Submit</button>
-                        
-                    </form>
-                  
-                            
-                          
-                                                                                                         
-      
-                  
-                     
-              </div>
-          </div>
-      
-      
-      
-      
-      <!-- Footer -->
-       <!-- <footer id="sticky-footer" class="py-4 text-white-50">
-          <div class="container ">
-            <div class = "d-flex flex-column justify-content-center align-items-center p-1">
-             <div class="col-lg-1 col-md-8 mb-2"> -->
-           <!--  <div class="view overlay z-depth-1-half">-->
-            <!-- <img src="../../assets/images/logo.png" class="img-fluid"
-                  alt="">
-                  <a href="">
-                     <div class="mask rgba-white-light"></div>
-                </a>
-              </div>
-            <small>&copy;2019 AAR</small>
-          </div>
-          </div>
-        </footer> -->
-      <!-- Footer -->
-      
-    
+      </div>
     </div>
-    </section>
-<!-- 
-    <footer id="sticky-footer" class="py-4 text-white-50">
-        <div class="container ">
-            <div class = "d-flex flex-column justify-content-center align-items-center p-1">
-             <div class="col-lg-1 col-md-8 mb-2">
-            <img src="assets/images/logo.png" class="img-fluid"
-                  alt="">
-                  <a href="">
-                     <div class="mask rgba-white-light"></div>
-                </a>
-              </div>
-            <small>&copy;2019 AAR</small>
-          </div>
-          </div>
-      </footer> -->
+  </section>
+
