@@ -10,7 +10,7 @@ export class AmericanVendorService {
   constructor(private httpClient: HttpClient) { }
 
   getAmericanItems(): Observable<AmericanVendor[]> {
-    let url ="./assets/data/american.json";
+    let url ="http://localhost:8080/CMS/api/training/tid/3401";
     return this.httpClient.get<AmericanVendor[]>(url);
   }
 

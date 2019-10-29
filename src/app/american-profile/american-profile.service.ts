@@ -10,6 +10,7 @@ export class AmericanProfileService {
   constructor(private httpClient: HttpClient) { }
 
   getamerican(): Observable<americanprofile[]> {
-    return this.httpClient.get<americanprofile[]>("./assets/data/american-profile.json");
+    let url ="http://localhost:8080/CMS/api/training/prof/vend/3401";
+    return this.httpClient.get<americanprofile[]>(url);
   }
 }

@@ -1,7 +1,9 @@
 interface americanprofile{
-    name: string,
-    address:string,
-    emailid: number,
-    contact: number,
-    balance: number
+    vendorId:number,
+    vendorPhone: number,
+    vendorEmail: string,
+    vendorUname: string,
+    vendorName: string,
+    vendorBalance: number,
+    vendorPassword:string;
 }

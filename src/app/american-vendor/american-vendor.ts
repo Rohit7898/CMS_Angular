@@ -1,6 +1,9 @@
 interface AmericanVendor{
-    id: number,
-    name: string,
-    price: number,
-    image: any
+    itemId: number,
+    itemName: string,
+    itemPrice: number,
+    image: any,
+    vendorId:number;
+
+
 }

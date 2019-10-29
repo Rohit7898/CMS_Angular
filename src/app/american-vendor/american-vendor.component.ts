@@ -49,8 +49,8 @@ export class AmericanVendorComponent implements OnInit {
 
   delete(americanVendor: AmericanVendor): void {
     this.americanVendors = this.americanVendors.filter(n => n !== americanVendor);
-    this.americanVendorService.deleteAmericanItem(americanVendor.id).subscribe();
-    alert("Menu Item: " + americanVendor.name + " Deleted!");
+    this.americanVendorService.deleteAmericanItem(americanVendor.itemId).subscribe();
+    alert("Menu Item: " + americanVendor.itemName + " Deleted!");
   }
 
   edit(americanVendor: AmericanVendor)
@@ -62,7 +62,7 @@ export class AmericanVendorComponent implements OnInit {
     if (this.editAmericanItem) {
       this.americanVendorService.updateAmericanItem(this.editAmericanItem).subscribe
         (editNorthItem => {
-          const nr = this.editAmericanItem ? this.americanVendors.findIndex(n => n.id === this.editAmericanItem.id) : -1;
+          const nr = this.editAmericanItem ? this.americanVendors.findIndex(n => n.itemId === this.editAmericanItem.itemId) : -1;
           if (nr > -1) {
             this.americanVendors[nr] = this.editAmericanItem;
           }

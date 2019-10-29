@@ -7,13 +7,13 @@ import { AmericanProfileService } from './american-profile.service';
   styleUrls: ['./american-profile.component.css']
 })
 export class AmericanProfileComponent implements OnInit {
-  americanprofile: americanprofile[];
+  americanprofilelist: americanprofile[];
   errorMsg: any;
   constructor(public americanprofileService: AmericanProfileService) { }
 
   ngOnInit() {
     this.americanprofileService.getamerican().subscribe(
-      data => this.americanprofile = data,
+      data => this.americanprofilelist = data,
       error => this.errorMsg = error
     );
   }
