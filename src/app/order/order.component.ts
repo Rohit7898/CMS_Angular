@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {IndianVendorService } from '../indian-vendor/indian-vendor.service';
 import {AmericanVendorService } from '../american-vendor/american-vendor.service';
 import {MexicanVendorService } from '../mexican-vendor/mexican-vendor.service';
+import { OrderService } from './order.service';
+import { MenuItem } from '../data/menu_item';
 
 @Component({
   selector: 'app-order',
@@ -10,6 +12,12 @@ import {MexicanVendorService } from '../mexican-vendor/mexican-vendor.service';
 })
 export class OrderComponent implements OnInit {
 
+  public AmericanCollapsed = true;
+  public IndianCollapsed = true;
+  public MexicanCollapsed = true;
+  public CartCollapsed = true;
+  public AddCollapsed = true;
+  menuItem:MenuItem[];
   order: Order[];
   indianVendors: IndianVendor[];
   errorMsg: any;
@@ -26,28 +34,19 @@ export class OrderComponent implements OnInit {
   empBalance : number = 50;
   amount : number;
 
-  constructor(public indianVendorService: IndianVendorService, public americanVendorService:AmericanVendorService, public mexicanVendorService:MexicanVendorService) { }
+  constructor(public orderService:OrderService) { }
 
   ngOnInit() {
-    this.indianVendorService.getIndianItems().subscribe(
-      data => this.indianVendors = data,
-      error => this.errorMsg = error
-    );
-    this.americanVendorService.getAmericanItems().subscribe(
-      data => this.americanVendors = data,
-      error => this.errorMsg = error
-    );
-    this.mexicanVendorService.getMexicanItems().subscribe(
-      data => this.mexicanVendors = data,
-      error => this.errorMsg = error
-    );
-
+    
+      this.orderService.getMenuItems().subscribe({
+        next:data => {
+          this.menuItem = data;
+        },
+        error: error => this.errorMsg = error
+      }
+      );
   }
-  public AmericanCollapsed = true;
-  public IndianCollapsed = true;
-  public MexicanCollapsed = true;
-  public CartCollapsed = true;
-  public AddCollapsed = true;
+  
 
   details1(ind: IndianVendor)
     {            
