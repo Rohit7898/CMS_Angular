@@ -34,7 +34,10 @@
           </p>
           <div id="collapseExample" [ngbCollapse]="AmericanCollapsed">
             <div class="row">
-            <div class="col-md-4" *ngFor="let n of americanVendors">
+            <div class="col-md-4" *ngFor="let n of menuItem">
+                <div *ngIf="n.vendorId==3401">
+
+                
                 <div class="card mb-4 box-shadow">
 
 
@@ -42,21 +45,22 @@
                             <div class="hovereffect">
                                     <img class="card-img-top"
                                 data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                                alt="Thumbnail [100%x250]" src="{{n.itemImage}}" data-holder-rendered="true"
                                 style="height: 250px; width: 100%; display: block;">
                                 <!-- <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt=""> -->
                                 <div class="overlay">
-                                            <h2 class="hh">{{n.name}}</h2>
+                                            <h2 class="hh">{{n.itemName}}</h2>
                                        <a class="info" title="Add to Your Order" (click)="details1(n)"><i class="fas fa-cart-arrow-down"></i></a>
                                     </div>
                                 </div>
-                                <p class="card-text"><strong>{{n.name}}</strong><span
-                                    style="float: right"><strong>${{n.price}}</strong></span>
+                                <p class="card-text"><strong>{{n.itemName}}</strong><span
+                                    style="float: right"><strong>${{n.itemPrice}}</strong></span>
                             </p>
 
                         
                     </div>
                 </div>
+            </div>
             </div>
         </div>
        </div>
