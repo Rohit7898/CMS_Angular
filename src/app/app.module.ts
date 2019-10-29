@@ -24,6 +24,7 @@ import { IndianprofileComponent } from './indianprofile/indianprofile.component'
 import { MexicanprofileComponent } from './mexicanprofile/mexicanprofile.component';
 import { AcceptComponent } from './accept/accept.component';
 import { VendortransactionComponent } from './vendortransaction/vendortransaction.component';
+import { HeaderService } from './header/header.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { VendortransactionComponent } from './vendortransaction/vendortransactio
     NgbModule
   ],
   exports: [OrderComponent],
-  providers: [],
+  providers: [HeaderService],
   bootstrap: [AppComponent,OrderComponent]
 })
 export class AppModule { }
