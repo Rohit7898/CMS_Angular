@@ -4,6 +4,8 @@ import {AmericanVendorService } from '../american-vendor/american-vendor.service
 import {MexicanVendorService } from '../mexican-vendor/mexican-vendor.service';
 import { OrderService } from './order.service';
 import { MenuItem } from '../data/menu_item';
+import { AddStatus } from '../data/addStatus';
+import { Cart } from '../data/cart';
 
 @Component({
   selector: 'app-order',
@@ -18,6 +20,9 @@ export class OrderComponent implements OnInit {
   public CartCollapsed = true;
   public AddCollapsed = true;
   menuItem:MenuItem[];
+  item:MenuItem;
+  cart:Cart[];
+  userId: String;
   order: Order[];
   indianVendors: IndianVendor[];
   errorMsg: any;
@@ -26,18 +31,19 @@ export class OrderComponent implements OnInit {
   editAmericanItem: AmericanVendor;
   mexicanVendors: MexicanVendor[];
   editMexicanItem: MexicanVendor;
-  list1: IndianVendor[] = [];
+  list1: MenuItem[] = [];
   list2: AmericanVendor[] = [];
   list3: MexicanVendor[] = [];
   list: Order[] = [];
   total: number = 0.0;
   empBalance : number = 50;
   amount : number;
+  addStatus: AddStatus[];
 
   constructor(public orderService:OrderService) { }
 
   ngOnInit() {
-    
+      this.userId=localStorage.getItem('token');
       this.orderService.getMenuItems().subscribe({
         next:data => {
           this.menuItem = data;
@@ -45,114 +51,86 @@ export class OrderComponent implements OnInit {
         error: error => this.errorMsg = error
       }
       );
+
+      
   }
   
+  showCart()
+  {
+    this.userId=localStorage.getItem('token');
+    this.orderService.getCart(this.userId).subscribe({
+      next:data => {
+        this.cart = data;
+        console.log(this.cart[0].itemID);
+      },
+      error: error => this.errorMsg = error
+    });
+  }
 
-  details1(ind: IndianVendor)
-    {            
-      if(this.list1.length == 0)
+  details1(item1: MenuItem)
+    {  
+      
+      if(this.cart.length == 0)
       {
-        this.list1.push(ind);
-        this.total += Math.round(ind.price);  
+        this.userId=localStorage.getItem('token');
+        this.orderService.addToCart(item1,this.userId).subscribe({
+          next: data => {
+            this.addStatus = data;
+            if(this.addStatus){
+              //console.log(this.addStatus[0].add);
+            }
+            else{
+            // this.added = false;
+            }
+          },
+          error: error => this.errorMsg = error
+        }); 
       }
       else
       {
         let flag = false;
-        for(var l of this.list1)
+        for(var l of this.cart)
         {
-          if(ind.id == l.id)
+          if(item1.itemId == l.itemID)
           {
-            alert("Item " + l.name + " already present in cart");
+            alert("Item " + l.itemName + " already present in cart");
             flag = true;
             break;
           }
         }
         if(flag == false)
           {
-            this.list1.push(ind);
-            this.total += Math.round(ind.price);  
+            this.userId=localStorage.getItem('token');
+            this.orderService.addToCart(item1,this.userId).subscribe({
+              next: data => {
+                this.addStatus = data;
+                if(this.addStatus){
+                  //console.log(this.addStatus[0].add);
+                }
+                else{
+                // this.added = false;
+                }
+              },
+              error: error => this.errorMsg = error
+            }); 
           }
       }    
     }
 
     //add to order south
-    details2(amr: AmericanVendor)
-    {            
-      if(this.list2.length == 0)
-      {
-        this.list2.push(amr);
-        this.total += Math.round(amr.price);  
-      }
-      else
-      {
-        let flag = false;
-        for(var l of this.list2)
-        {
-          if(amr.id == l.id)
-          {
-            alert("Item " + l.name + " already present in cart");
-            flag = true;
-            break;
-          }
-        }
-        if(flag == false)
-          {
-            this.list2.push(amr);
-            this.total += Math.round(amr.price);  
-          }
-      }    
-    }
-
-//add to order north
-    details3(mex: MexicanVendor)
-    {            
-      if(this.list3.length == 0)
-      {
-        this.list3.push(mex);
-        this.total += Math.round(mex.price);  
-      }
-      else
-      {
-        let flag = false;
-        for(var l of this.list3)
-        {
-          if(mex.id == l.id)
-          {
-            alert("Item " + l.name + " already present in cart");
-            flag = true;
-            break;
-          }
-        }
-        if(flag == false)
-          {
-            this.list3.push(mex);
-            this.total += Math.round(mex.price);  
-          }
-      }    
-    }
-
+    
     //delete 1 item from indo
-    deleteItem1(ind : IndianVendor)
+    deleteItem1(itemD : Cart)
     {
-      this.total -= Math.round(ind.price);
-      this.list1 = this.list1.filter(l => l!== ind);
+      this.userId=localStorage.getItem('token');
+      this.orderService.deleteItem(itemD.orderId,this.userId).subscribe({
+        next: data => {
+          this.cart = data;
+          },
+        error: error => this.errorMsg = error
+      }); 
     }
     
-    //delete 1 item from south
-    deleteItem2(amr : AmericanVendor)
-    {
-      this.total -= Math.round(amr.price);
-      this.list2 = this.list2.filter(l => l!== amr);
-    }
-
-    
-    //delete 1 item from north
-    deleteItem3(mex : MexicanVendor)
-    {
-      this.total -= Math.round(mex.price);
-      this.list3 = this.list3.filter(l => l!== mex);
-    }
-
     //add money to wallet
     addBalance()
     {

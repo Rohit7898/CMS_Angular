@@ -1,3 +1,11 @@
 export interface LoginData{
-    status:boolean;
+    employeeId : number,
+    employeeName : String;
+    employeeEmail : String;
+    employeeContact : String;
+    employeePassword : String;
+    role : String;
+    image : String;
+    balance : number;
+    pass:boolean;
 }
