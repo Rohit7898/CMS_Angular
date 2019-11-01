@@ -1,4 +1,5 @@
 <header>
+     
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Brand -->
             <a class="navbar-brand" href="#"><img src="assets/images/logo.png" style="width:50px"></a>
@@ -21,33 +22,7 @@
 
 <section class = "newtran">
  <div class="myone">
-   <!-- <div class= "container-fluid h-100">
-    <div class = "d-flex flex-column justify-content-center h-100 align-items-center p-4">
-     <div style="text-align:left">
-        <h1>
-            {{ title }}
-        </h1>
-    
-        <table > -->
-            <!-- ADD HEADERS -->
-            <!-- <tr>
-                <th>ID</th>
-                    <th> Vendor</th>
-                    <th>ItemName</th>
-                        <th>Price</th>
-            </tr>
-     -->
-            <!-- BIND ARRAY TO TABLE -->
-            <!-- <tr *ngFor="let e of emptrans">
-                <td>{{e.id}}</td>
-                    <td>{{e.Vendor}}</td>
-                        <td>{{e.itemname}}</td>
-                        <td>{{e.price}}</td>
-            </tr>
-        </table>
-    </div>
-</div>
-</div> -->
+  
 <main role="main">
 
     <section class="jumbotron text-center">
@@ -71,16 +46,26 @@
                             <th>Vendor</th>
                             <th>ItemName</th>
                             <th>Price($)</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let e of emptrans">
-                            <td style="width: 150px"><strong>{{e.id}}</strong></td>
-                            <td style="width: 150px"><strong>{{e.Vendor}}</strong></td>
-                            
-                            
-                            <td style="width: 150px"><strong>{{e.itemname}}</strong></td>
-                            <td style="width: 150px"><strong>{{e.price}}</strong></td>
+                            <td style="width: 150px"><strong>{{e.orderId}}</strong></td>
+                            <td style="width: 150px"><strong>{{e.vendorName}}</strong></td>
+                            <td style="width: 150px"><strong>{{e.itemName}}</strong></td>
+                            <td style="width: 150px"><strong>{{e.totalPrice}}</strong></td>
+                            <td style="width: 150px">
+                                <ng-template [ngIf]="e.status == '1'">
+                                            Pending
+                                </ng-template>
+                                <ng-template [ngIf]="e.status == '2'">
+                                        Accepted
+                                </ng-template>
+                                <ng-template [ngIf]="e.status == '3'">
+                                        Rejected
+                                </ng-template>
+                            </td>
                             
                        </tr>
                     </tbody>

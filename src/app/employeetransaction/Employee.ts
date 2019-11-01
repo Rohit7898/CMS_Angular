@@ -1,7 +1,9 @@
 interface Emptrans {
-    id: number,
-     Vendor: string,
-    
-    itemname: string,
-    price: number
+    orderId:number,
+    itemId:number,
+    itemName:String,
+    date:Date,
+    totalPrice:number,
+    vendorName:String,
+    status:number
 }

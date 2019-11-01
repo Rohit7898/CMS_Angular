@@ -16,6 +16,12 @@
   #sticky-footer {
     background :rgb(0,0,0);
   flex-shrink: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  text-align: center;
 }
 
   
