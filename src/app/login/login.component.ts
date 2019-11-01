@@ -55,10 +55,10 @@ export class LoginComponent implements OnInit, OnDestroy  {
     this.loginService.getLoginData(username, password).subscribe({
       next:data => {
         this.employeeList = data;
-        if(this.employeeList.status){
+        console.log(this.employeeList[0].employeeId);
+        if(this.employeeList[0].pass){
           this.router.navigate(['/Order']);
           localStorage.setItem('token', this.userData.username);
-          localStorage.setItem('tokenId', this.employeeList[0].member_id);
           this.header.tokenUser();
         }else{
           this.loginError = true;
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit, OnDestroy  {
         if(data[0] && this.employeeList[0].department.toLowerCase() == this.userData.type.toLowerCase()){
           this.router.navigate(['/Order']);
           localStorage.setItem('token', this.userData.username);
-          localStorage.setItem('tokenId', this.employeeList[0].member_id);
+          //localStorage.setItem('tokenId', this.employeeList[0].member_id);
           this.header.tokenUser();
         }else{
           this.loginError = true;

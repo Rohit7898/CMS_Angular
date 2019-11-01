@@ -4,6 +4,8 @@ import {AmericanVendorService } from '../american-vendor/american-vendor.service
 import {MexicanVendorService } from '../mexican-vendor/mexican-vendor.service';
 import { OrderService } from './order.service';
 import { MenuItem } from '../data/menu_item';
+import { AddStatus } from '../data/addStatus';
+import { Cart } from '../data/cart';
 
 @Component({
   selector: 'app-order',
@@ -18,6 +20,9 @@ export class OrderComponent implements OnInit {
   public CartCollapsed = true;
   public AddCollapsed = true;
   menuItem:MenuItem[];
+  item:MenuItem;
+  cart:Cart[];
+  userId: String;
   order: Order[];
   indianVendors: IndianVendor[];
   errorMsg: any;
@@ -26,18 +31,19 @@ export class OrderComponent implements OnInit {
   editAmericanItem: AmericanVendor;
   mexicanVendors: MexicanVendor[];
   editMexicanItem: MexicanVendor;
-  list1: IndianVendor[] = [];
+  list1: MenuItem[] = [];
   list2: AmericanVendor[] = [];
   list3: MexicanVendor[] = [];
   list: Order[] = [];
   total: number = 0.0;
   empBalance : number = 50;
   amount : number;
+  addStatus: AddStatus[];
 
   constructor(public orderService:OrderService) { }
 
   ngOnInit() {
-    
+      this.userId=localStorage.getItem('token');
       this.orderService.getMenuItems().subscribe({
         next:data => {
           this.menuItem = data;
@@ -45,22 +51,56 @@ export class OrderComponent implements OnInit {
         error: error => this.errorMsg = error
       }
       );
+
+      
   }
   
+  showCart()
+  {
+    this.userId=localStorage.getItem('token');
+    this.orderService.getCart(this.userId).subscribe({
+      next:data => {
+        this.cart = data;
+        console.log(this.cart[0].itemID);
+      },
+      error: error => this.errorMsg = error
+    });
+  }
 
-  details1(ind: IndianVendor)
-    {            
-      if(this.list1.length == 0)
+  details1(item1: MenuItem)
+    {  
+      
+      if(this.cart.length == 0)
       {
+<<<<<<< HEAD
         this.list1.push(ind);
         this.total += Math.round(ind.itemPrice);  
+=======
+        this.userId=localStorage.getItem('token');
+        this.orderService.addToCart(item1,this.userId).subscribe({
+          next: data => {
+            this.addStatus = data;
+            if(this.addStatus){
+              //console.log(this.addStatus[0].add);
+            }
+            else{
+            // this.added = false;
+            }
+          },
+          error: error => this.errorMsg = error
+        }); 
+>>>>>>> 7eb55588153ce9dedd7b33606c2efbea126b0122
       }
       else
       {
         let flag = false;
-        for(var l of this.list1)
+        for(var l of this.cart)
         {
+<<<<<<< HEAD
           if(ind.itemId == l.itemId)
+=======
+          if(item1.itemId == l.itemID)
+>>>>>>> 7eb55588153ce9dedd7b33606c2efbea126b0122
           {
             alert("Item " + l.itemName + " already present in cart");
             flag = true;
@@ -69,13 +109,30 @@ export class OrderComponent implements OnInit {
         }
         if(flag == false)
           {
+<<<<<<< HEAD
             this.list1.push(ind);
             this.total += Math.round(ind.itemPrice);  
+=======
+            this.userId=localStorage.getItem('token');
+            this.orderService.addToCart(item1,this.userId).subscribe({
+              next: data => {
+                this.addStatus = data;
+                if(this.addStatus){
+                  //console.log(this.addStatus[0].add);
+                }
+                else{
+                // this.added = false;
+                }
+              },
+              error: error => this.errorMsg = error
+            }); 
+>>>>>>> 7eb55588153ce9dedd7b33606c2efbea126b0122
           }
       }    
     }
 
     //add to order south
+<<<<<<< HEAD
     details2(amr: AmericanVendor)
     {            
       if(this.list2.length == 0)
@@ -137,22 +194,26 @@ export class OrderComponent implements OnInit {
       this.total -= Math.round(ind.itemPrice);
       this.list1 = this.list1.filter(l => l!== ind);
     }
+=======
+>>>>>>> 7eb55588153ce9dedd7b33606c2efbea126b0122
     
-    //delete 1 item from south
-    deleteItem2(amr : AmericanVendor)
+    //delete 1 item from indo
+    deleteItem1(itemD : Cart)
     {
+<<<<<<< HEAD
       this.total -= Math.round(amr.itemPrice);
       this.list2 = this.list2.filter(l => l!== amr);
+=======
+      this.userId=localStorage.getItem('token');
+      this.orderService.deleteItem(itemD.orderId,this.userId).subscribe({
+        next: data => {
+          this.cart = data;
+          },
+        error: error => this.errorMsg = error
+      }); 
+>>>>>>> 7eb55588153ce9dedd7b33606c2efbea126b0122
     }
-
     
-    //delete 1 item from north
-    deleteItem3(mex : MexicanVendor)
-    {
-      this.total -= Math.round(mex.price);
-      this.list3 = this.list3.filter(l => l!== mex);
-    }
-
     //add money to wallet
     addBalance()
     {

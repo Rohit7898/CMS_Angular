@@ -75,27 +75,34 @@
         <div class="row">
      
         <!--indian-->
-        <div class="col-md-4" *ngFor="let n of indianVendors">
-            <div class="card mb-4 box-shadow">
+        <div class="col-md-4" *ngFor="let n of menuItem">
+                <div *ngIf="n.vendorId==3402">
 
-                <div class="card-body">
-                        <div class="hovereffect">
-                                <img class="card-img-top"
+                
+                <div class="card mb-4 box-shadow">
+
+
+                    <div class="card-body">
+                            <div class="hovereffect">
+                                    <img class="card-img-top"
                                 data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                                alt="Thumbnail [100%x250]" src="{{n.itemImage}}" data-holder-rendered="true"
                                 style="height: 250px; width: 100%; display: block;">
                                 <!-- <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt=""> -->
                                 <div class="overlay">
-                                        <h2 class="hh">{{n.name}}</h2>
-                                   <a class="info" title="Add to Your Order" (click)="details2(n)"><i class="fas fa-cart-arrow-down"></i></a>
+                                            <h2 class="hh">{{n.itemName}}</h2>
+                                       <a class="info" title="Add to Your Order" (click)="details1(n)"><i class="fas fa-cart-arrow-down"></i></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="card-text"><strong>{{n.name}}</strong><span
-                                style="float: right"><strong>${{n.price}}</strong></span>
-                        </p>
+                                <p class="card-text"><strong>{{n.itemName}}</strong><span
+                                    style="float: right"><strong>${{n.itemPrice}}</strong></span>
+                            </p>
+
+                        
+                    </div>
                 </div>
             </div>
-        </div>
+            </div>
     </div>
         </div>
         <!--INDIAN-->
@@ -111,29 +118,34 @@
          
         <!--MEXICAN-->
 
-        <div class="col-md-4" *ngFor="let n of mexicanVendors">
-            <div class="card mb-4 box-shadow">
+        <div class="col-md-4" *ngFor="let n of menuItem">
+                <div *ngIf="n.vendorId==3403">
 
-                <div class="card-body">
-                        <div class="hovereffect">
-                                <img class="card-img-top"
+                
+                <div class="card mb-4 box-shadow">
+
+
+                    <div class="card-body">
+                            <div class="hovereffect">
+                                    <img class="card-img-top"
                                 data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                                alt="Thumbnail [100%x250]" src="{{n.itemImage}}" data-holder-rendered="true"
                                 style="height: 250px; width: 100%; display: block;">
                                 <!-- <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt=""> -->
                                 <div class="overlay">
-                                   <h2 class="hh">{{n.name}}</h2>
-                                   <a class="info" title="Add to Your Order" (click)="details3(n)"><i class="fas fa-cart-arrow-down"></i></a>
+                                            <h2 class="hh">{{n.itemName}}</h2>
+                                       <a class="info" title="Add to Your Order" (click)="details1(n)"><i class="fas fa-cart-arrow-down"></i></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="card-text"><strong>{{n.name}}</strong><span
-                                style="float: right"><strong>${{n.price}}</strong></span>
-                        </p>
+                                <p class="card-text"><strong>{{n.itemName}}</strong><span
+                                    style="float: right"><strong>${{n.itemPrice}}</strong></span>
+                            </p>
 
-                    
+                        
+                    </div>
                 </div>
             </div>
-        </div>
+            </div>
     </div>
           </div>
         </div>
@@ -141,7 +153,7 @@
         <br>
             <hr>
             <p>
-                    <button type="button" class="btn btn-primary" (click)="CartCollapsed = !CartCollapsed"
+                    <button type="button" class="btn btn-primary" (click)="showCart(); CartCollapsed = !CartCollapsed"
                             [attr.aria-expanded]="!CartCollapsed" aria-controls="collapseExample">
                       Cart
                     </button>
@@ -160,25 +172,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let l of list1" let result=0>
+                        <tr *ngFor="let l of cart" let result=0>
 
-                            <td>{{l.name}}</td>
-                            <td>${{l.price}}</td>
+                            <td>{{l.itemName}}</td>
+                            <td>${{l.totalPrice}}</td>
                             <td><button class="btn btn-danger btn-sm" (click)="deleteItem1(l)">Remove</button></td>
                         </tr>
-                        <tr *ngFor="let l of list2" let result=0>
-
-                            <td>{{l.name}}</td>
-                            <td>${{l.price}}</td>
-                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem2(l)">Remove</button></td>
-                        </tr>
-
-                        <tr *ngFor="let l of list3" let result=0>
-
-                            <td>{{l.name}}</td>
-                            <td>${{l.price}}</td>
-                            <td><button class="btn btn-danger btn-sm" (click)="deleteItem3(l)">Remove</button></td>
-                        </tr>
+                        
                     </tbody>
                 </table>
                 <br>
