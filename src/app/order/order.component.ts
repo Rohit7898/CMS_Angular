@@ -53,16 +53,16 @@ export class OrderComponent implements OnInit {
       if(this.list1.length == 0)
       {
         this.list1.push(ind);
-        this.total += Math.round(ind.price);  
+        this.total += Math.round(ind.itemPrice);  
       }
       else
       {
         let flag = false;
         for(var l of this.list1)
         {
-          if(ind.id == l.id)
+          if(ind.itemId == l.itemId)
           {
-            alert("Item " + l.name + " already present in cart");
+            alert("Item " + l.itemName + " already present in cart");
             flag = true;
             break;
           }
@@ -70,7 +70,7 @@ export class OrderComponent implements OnInit {
         if(flag == false)
           {
             this.list1.push(ind);
-            this.total += Math.round(ind.price);  
+            this.total += Math.round(ind.itemPrice);  
           }
       }    
     }
@@ -81,16 +81,16 @@ export class OrderComponent implements OnInit {
       if(this.list2.length == 0)
       {
         this.list2.push(amr);
-        this.total += Math.round(amr.price);  
+        this.total += Math.round(amr.itemPrice);  
       }
       else
       {
         let flag = false;
         for(var l of this.list2)
         {
-          if(amr.id == l.id)
+          if(amr.itemId == l.itemId)
           {
-            alert("Item " + l.name + " already present in cart");
+            alert("Item " + l.itemName + " already present in cart");
             flag = true;
             break;
           }
@@ -98,7 +98,7 @@ export class OrderComponent implements OnInit {
         if(flag == false)
           {
             this.list2.push(amr);
-            this.total += Math.round(amr.price);  
+            this.total += Math.round(amr.itemPrice);  
           }
       }    
     }
@@ -134,14 +134,14 @@ export class OrderComponent implements OnInit {
     //delete 1 item from indo
     deleteItem1(ind : IndianVendor)
     {
-      this.total -= Math.round(ind.price);
+      this.total -= Math.round(ind.itemPrice);
       this.list1 = this.list1.filter(l => l!== ind);
     }
     
     //delete 1 item from south
     deleteItem2(amr : AmericanVendor)
     {
-      this.total -= Math.round(amr.price);
+      this.total -= Math.round(amr.itemPrice);
       this.list2 = this.list2.filter(l => l!== amr);
     }
 

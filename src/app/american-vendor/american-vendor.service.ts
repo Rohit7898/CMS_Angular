@@ -15,13 +15,20 @@ export class AmericanVendorService {
   }
 
   deleteAmericanItem(id: number): Observable<{}>{
-    let url ="./assets/data/american.json";
-    const deleteUrl= `${url}/${id}`;
-    return this.httpClient.delete(deleteUrl); 
+    let url ="http://localhost:8080/CMS/api/training/del/vend/3401/"+id;
+    
+    return this.httpClient.delete(url); 
   }
 
-  updateAmericanItem(americanVendor: AmericanVendor): Observable<AmericanVendor> {
-    let url ="./assets/data/american.json";  
-    return this.httpClient.put<AmericanVendor>(url, americanVendor);
+  addAmericanItem(america:amvend): Observable<AmericanVendor[]>{
+    
+    let url ="http://localhost:8080/CMS/api/training/add/newvend/3401";
+    
+    return this.httpClient.post<AmericanVendor[]>(url,america); 
+  }
+
+  updateAmericanItem(americanVendor: AmericanVendor): Observable<AmericanVendor[]> {
+    let url ="http://localhost:8080/CMS/api/training/wiiin/upd/3401/"+americanVendor.itemId+"/"+americanVendor.itemPrice+"/"+americanVendor.itemName;  
+    return this.httpClient.put<AmericanVendor[]>(url,americanVendor);
   }
 }

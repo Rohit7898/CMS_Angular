@@ -24,7 +24,7 @@ export class IndianVendorComponent implements OnInit {
   add(addForm: NgForm): void {
     this.editIndianItem = undefined;
     // name = name.trim();
-    if (!addForm.value.name) {
+    if (!addForm.value.nname) {
       return;
     }
 
@@ -37,18 +37,28 @@ export class IndianVendorComponent implements OnInit {
     // this.northVendorService.addNorthIndianItem(newNorthItem)
     //   .subscribe(north => {this.northVendors.push(north), console.log(north)},
     //   error => this.errorMsg = error);
+     
+    const md:indvend={
 
-    this.indianVendors.push(addForm.value);
-    console.log(this.indianVendors);
-    alert("Menu Item: " + addForm.value.name + " Added!");
+      itemName:addForm.value.nname,
+      itemPrice:addForm.value.price
+};
+
+this.indianVendorService.addIndian(md).subscribe(
+  data => this.indianVendors = data,
+  error => this.errorMsg = error
+);
+  
+   
+    alert("Menu Item: " + addForm.value.nname + " Added!");
     addForm.resetForm();
 
 
   }
   delete(indianVendor: IndianVendor): void {
     this.indianVendors = this.indianVendors.filter(n => n !== indianVendor);
-    this.indianVendorService.deleteIndianItem(indianVendor.id).subscribe();
-    alert("Menu Item: " + indianVendor.name + " Deleted!");
+    this.indianVendorService.deleteIndianItem(indianVendor.itemId).subscribe();
+    alert("Menu Item: " + indianVendor.itemName + " Deleted!");
   }
 
   edit(indianVendor: IndianVendor)
@@ -60,7 +70,7 @@ export class IndianVendorComponent implements OnInit {
     if (this.editIndianItem) {
       this.indianVendorService.updateIndianItem(this.editIndianItem).subscribe
         (editNorthItem => {
-          const nr = this.editIndianItem ? this.indianVendors.findIndex(n => n.id === this.editIndianItem.id) : -1;
+          const nr = this.editIndianItem ? this.indianVendors.findIndex(n => n.itemId === this.editIndianItem.itemId) : -1;
           if (nr > -1) {
             this.indianVendors[nr] = this.editIndianItem;
           }

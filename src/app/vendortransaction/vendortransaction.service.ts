@@ -10,7 +10,7 @@ export class VendortransactionService {
   constructor(private httpClient: HttpClient) { }
 
   getVenTransac(): Observable<Ventrans[]> {
-    let url ="./assets/data/ventrans.json";
+    let url ="http://localhost:8080/CMS/api/training/hist/vend/check/3401";
     return this.httpClient.get<Ventrans[]>(url);
   }
 }

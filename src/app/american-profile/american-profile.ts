@@ -1,9 +1,10 @@
-interface americanprofile{
-    vendorId:number,
-    vendorPhone: number,
-    vendorEmail: string,
-    vendorUname: string,
-    vendorName: string,
+export interface americanprofile{
+  
+    vendorPassword:string,
     vendorBalance: number,
-    vendorPassword:string;
+    vendorUname: string,
+    vendorId:number,
+    vendorEmail: string,
+    vendorPhone: number,
+    vendorName: string;
 }

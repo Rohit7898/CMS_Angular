@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AmericanProfileService } from './american-profile.service';
+import { americanprofile } from './american-profile';
 
 @Component({
   selector: 'app-american-profile',
@@ -17,4 +18,6 @@ export class AmericanProfileComponent implements OnInit {
       error => this.errorMsg = error
     );
   }
+
+  
 }

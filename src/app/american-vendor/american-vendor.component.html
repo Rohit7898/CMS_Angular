@@ -20,9 +20,7 @@
                     <a class="nav-link" data-toggle="modal" data-target="#myModal">Add <span class="sr-only">(current)</span></a>
                   </li>
                  
-          <li class="nav-item">
-            <a class="nav-link" routerLink="#">About us <span class="sr-only">(current)</span></a>
-          </li>
+          
         </ul>
       </nav>
 <div class="col-lg-10 mx-auto col-12 text-center mb-3">
@@ -42,7 +40,7 @@
                     <div class="form-group">
                         <label>Item Name: </label>
                         <input type="text" required #itemName="ngModel" class="form-control" style="width:200px"
-                            ngModel name="name"
+                            ngModel name="nname"
                             [ngClass]="{ 'is-invalid': userForm.submitted && itemName.invalid }">
                         <div *ngIf="userForm.submitted && itemName.invalid" class="invalid-feedback">
                             <div *ngIf="itemName.errors.required">Item Name is required</div>
@@ -51,8 +49,8 @@
 
                     <div class="form-group">
                         <label>Item Price :</label>
-                        <input type="number" required #itemPrice="ngModel" class="form-control" style="width:200px"
-                            ngModel name="price"
+                        <input type="text" required #itemPrice="ngModel" class="form-control" style="width:200px"
+                             ngModel name="price"
                             [ngClass]="{ 'is-invalid': userForm.submitted && itemPrice.invalid }">
                         <div *ngIf="userForm.submitted && itemPrice.invalid" class="invalid-feedback">
                             <div *ngIf="itemPrice.errors.required">Item Price is required</div>

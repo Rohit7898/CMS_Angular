@@ -25,6 +25,8 @@ import { MexicanprofileComponent } from './mexicanprofile/mexicanprofile.compone
 import { AcceptComponent } from './accept/accept.component';
 import { VendortransactionComponent } from './vendortransaction/vendortransaction.component';
 import { HeaderService } from './header/header.service';
+import { IndiantransactionComponent } from './indiantransaction/indiantransaction.component';
+import { AcceptindianComponent } from './acceptindian/acceptindian.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { HeaderService } from './header/header.service';
     AmericanProfileComponent,
     IndianprofileComponent,
     MexicanprofileComponent,
-    VendortransactionComponent
+    VendortransactionComponent,
+    IndiantransactionComponent,
+    AcceptindianComponent
   ],
   imports: [
     BrowserModule,

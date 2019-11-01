@@ -1,6 +1,8 @@
 interface IndianVendor{
-    id: number,
-    name: string,
-    price: number,
-    image: any
+    itemId: number,
+    itemName: string,
+    itemPrice: number,
+    itemImage: any,
+    vendorId:number;
+
 }

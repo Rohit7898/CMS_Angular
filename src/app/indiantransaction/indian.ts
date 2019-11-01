@@ -1,4 +1,4 @@
-interface Ventrans {
+interface intrans {
     vorder_id: number,
     vuser_name:string,
     vuser_id:number, 

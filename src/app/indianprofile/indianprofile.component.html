@@ -1,39 +1,65 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#"><img src="assets/images/logo.png" style="width:50px"></a>
 
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="/home">Log Out</button>
+    </li>
+    <li class="nav-item">
+          <a class="nav-link" routerLink="/acceptind">Requests <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/iprofile">Profile <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/indiantran">History <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/indian-vendor">Home <span class="sr-only">(current)</span></a>
+      </li>
+           
+    
+  </ul>
+</nav>
           
           <div class="container">
                 <div class="row">
                     
                         <div class="card">
                             <div class="card-body">
+                                <div *ngFor="let n of indianprofile">
                                 <img src="assets\images\Priya.jpg.jpg"alt="Priya" style="width:45%">
                                 <table>
                                   <br>
                                   <tr>
                                     <td align=left><b>Name:</b></td>
-                                    <td align=left>{{indianprofile.name}}</td>
+                                    <td align=left>{{n.vendorName}}</td>
                                   </tr>
                                   <br>
                                   <tr>
                                     <td align=left><b>Address:</b></td>
-                                    <td align=left>{{indianprofile.address}}</td>
+                                    <td align=left>{{n.vendorId}}</td>
                                   </tr>
                                   <br>
                                   <tr>
                                       <td align=left><b>Email Id:</b></td>
-                                      <td align=left>{{indianprofile.emailid}}</td>
+                                      <td align=left>{{n.vendorEmail}}</td>
                                     </tr>
                                     <br>
                                     <tr>
                                         <td align=left><b>Contact No:</b></td>
-                                        <td align=left>{{indianprofile.contact}}</td>
+                                        <td align=left>{{n.vendorPhone}}</td>
                                       </tr>
                                       <br>
                                       <tr>
                                           <td align=left><b>Wallet Balance:</b></td>
-                                          <td align=left>{{indianprofile.balance}}</td>
+                                          <td align=left>{{n.vendorBalance}}</td>
                                         </tr>
                                         <br>
                                 </table>
+                                </div>
                               </div>
                            </div> 
             </div>

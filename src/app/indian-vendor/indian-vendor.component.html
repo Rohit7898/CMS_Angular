@@ -5,17 +5,21 @@
         <!-- Links -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="">Log Out</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="/home">Log Out</button>
           </li>
           <li class="nav-item">
-                <a class="nav-link" routerLink="/request">Requests <span class="sr-only">(current)</span></a>
+                <a class="nav-link" routerLink="/acceptind">Requests <span class="sr-only">(current)</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/iprofile">Profile <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" routerLink="/indiantran"> History <span class="sr-only">(current)</span></a>
+                  </li>
               <li class="nav-item">
                     <a class="nav-link" data-toggle="modal" data-target="#myModal">Add <span class="sr-only">(current)</span></a>
                   </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="#">About us <span class="sr-only">(current)</span></a>
-          </li>
+        
         </ul>
       </nav>
 <div class="col-lg-10 mx-auto col-12 text-center mb-3">
@@ -34,7 +38,7 @@
                     <div class="form-group">
                         <label>Item Name: </label>
                         <input type="text" required #itemName="ngModel" class="form-control" style="width:200px"
-                            ngModel name="name"
+                            ngModel name="nname"
                             [ngClass]="{ 'is-invalid': userForm.submitted && itemName.invalid }">
                         <div *ngIf="userForm.submitted && itemName.invalid" class="invalid-feedback">
                             <div *ngIf="itemName.errors.required">Item Name is required</div>
@@ -71,14 +75,14 @@
                             <div class="hovereffect">
                                     <img class="card-img-top"
                                     data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                    alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                                    alt="Thumbnail [100%x250]" src="{{n.itemImage}}" data-holder-rendered="true"
                                     style="height: 250px; width: 100%; display: block;">
                                     <!-- <img class="img-responsive" style="width:100%" src="assets/images/Indian.jpg" alt=""> -->
                                    <div class="overlay">
                                             <h2 class="hh">{{n.name}}</h2>
-                                            <input *ngIf="n===editIndianItem" [(ngModel)]="n.name" type="text" (blur)="update()"
+                                            <input *ngIf="n===editIndianItem" [(ngModel)]="n.itemName" type="text" (blur)="update()"
                                                 (keyup.enter)="update()">
-                                            <input *ngIf="n===editIndianItem" [(ngModel)]="n.price" type="text" (blur)="update()"
+                                            <input *ngIf="n===editIndianItem" [(ngModel)]="n.itemPrice" type="text" (blur)="update()"
                                                 (keyup.enter)="update()">
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
@@ -90,8 +94,8 @@
                                       
                                     </div>
                                 </div>
-                                <p class="card-text"><strong>{{n.name}}</strong><span
-                                    style="float: right"><strong>${{n.price}}</strong></span>
+                                <p class="card-text"><strong>{{n.itemName}}</strong><span
+                                    style="float: right"><strong>${{n.itemPrice}}</strong></span>
                             </p>
 
                         

@@ -16,7 +16,8 @@ import { IndianprofileComponent } from './indianprofile/indianprofile.component'
 import { MexicanprofileComponent } from './mexicanprofile/mexicanprofile.component';
 import { EmployeetransactionComponent } from './employeetransaction/employeetransaction.component';
 import { VendortransactionComponent } from './vendortransaction/vendortransaction.component';
-
+import {IndiantransactionComponent} from './indiantransaction/indiantransaction.component';
+import{AcceptindianComponent } from './acceptindian/acceptindian.component';
 const routes: Routes = [
  {path: '', component: HomeComponent},
  {path: 'home', component: HomeComponent},
@@ -35,6 +36,8 @@ const routes: Routes = [
  { path: 'mprofile', component: MexicanprofileComponent},
  {path: 'etran', component:EmployeetransactionComponent  },
  {path: 'vtran', component:VendortransactionComponent  },
+ {path: 'indiantran',component:IndiantransactionComponent},
+ {path:'acceptind',component:AcceptindianComponent }
 ];
 
 @NgModule({

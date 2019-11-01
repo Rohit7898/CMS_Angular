@@ -14,54 +14,54 @@
           <a class="nav-link" routerLink="/aprofile">Profile <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="/aprofile">History <span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/vtran">History <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#myModal">Add <span class="sr-only">(current)</span></a>
-            </li>
+          <a class="nav-link" routerLink="/american-vendor">Home <span class="sr-only">(current)</span></a>
+      </li>
            
-    <li class="nav-item">
-      <a class="nav-link" routerLink="#">About us <span class="sr-only">(current)</span></a>
-    </li>
+    
   </ul>
 </nav>
           
           <div class="container">
                 <div class="row">
-                    
+                  <!-- <div class="col-md-4" *ngFor="let n of americanprofilelist"> -->
                         <div class="card">
                             <div class="card-body">
+                                <div *ngFor="let n of americanprofilelist">
                                 <img src="assets\images\David-profile.jpg"alt="David" style="width:45%">
                                 <table>
                                   <br>
                                   <tr>
                                     <td align=left><b>Name:</b></td>
-                                    <td align=left>{{americanprofilelist.vendorName}}</td>
+                                    <td align=left>{{n.vendorName}}</td>
                                   </tr>
                                   <br>
                                   <tr>
                                     <td align=left><b>Id:</b></td>
-                                    <td align=left>{{americanprofilelist.vendorId}}</td>
+                                    <td align=left>{{n.vendorId}}</td>
                                   </tr>
                                   <br>
                                   <tr>
                                       <td align=left><b>Email Id:</b></td>
-                                      <td align=left>{{americanprofilelist.vendorEmail}}</td>
+                                      <td align=left>{{n.vendorEmail}}</td>
                                     </tr>
                                     <br>
                                     <tr>
                                         <td align=left><b>Contact No:</b></td>
-                                        <td align=left>{{americanprofilelist.vendorPhone}}</td>
+                                        <td align=left>{{n.vendorPhone}}</td>
                                       </tr>
                                       <br>
                                       <tr>
                                           <td align=left><b>Wallet Balance:</b></td>
-                                          <td align=left>{{americanprofilelist.vendorBalance}}</td>
+                                          <td align=left>{{n.vendorBalance}}</td>
                                         </tr>
                                         <br>
                                 </table>
                               </div>
-                           </div> 
+                           </div>
+                </div> 
             </div>
                 </div>
           
