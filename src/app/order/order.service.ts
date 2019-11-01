@@ -36,6 +36,19 @@ export class OrderService {
   );
   }
 
+  addBalance(value: number, userId:String): Observable<AddStatus> {
+    //console.log("Object passing: ", userId);
+      return this.httpClient.put<AddStatus>('http://localhost:8080/CMS/api/cms/addBalance/'+userId,value)
+            .pipe(catchError(this.handleError)
+  );
+  }
+
+  checkOut(value: Cart[],userId:String): Observable<Cart[]> {
+    //console.log("Object passing: ", userId);
+      return this.httpClient.put<Cart[]>('http://localhost:8080/CMS/api/cms/checkOut/'+userId,value)
+            .pipe(catchError(this.handleError)
+  );
+  }
   private handleError(err: HttpErrorResponse) {
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console

@@ -57,8 +57,17 @@ export class LoginComponent implements OnInit, OnDestroy  {
         this.employeeList = data;
         console.log(this.employeeList[0].employeeId);
         if(this.employeeList[0].pass){
-          this.router.navigate(['/Order']);
+          
           localStorage.setItem('token', this.userData.username);
+          localStorage.setItem('name', this.employeeList[0].employeeName);
+          localStorage.setItem('email', this.employeeList[0].employeeEmail);
+          localStorage.setItem('contact', this.employeeList[0].employeeContact);
+          localStorage.setItem('password', this.employeeList[0].employeePassword);
+          localStorage.setItem('role', this.employeeList[0].role);
+          localStorage.setItem('image', this.employeeList[0].image);
+          localStorage.setItem('balance', this.employeeList[0].balance);
+          
+          this.router.navigate(['/Order']);
           this.header.tokenUser();
         }else{
           this.loginError = true;

@@ -22,6 +22,7 @@ export class OrderComponent implements OnInit {
   menuItem:MenuItem[];
   item:MenuItem;
   cart:Cart[];
+  add:AddStatus;
   userId: String;
   order: Order[];
   indianVendors: IndianVendor[];
@@ -36,7 +37,7 @@ export class OrderComponent implements OnInit {
   list3: MexicanVendor[] = [];
   list: Order[] = [];
   total: number = 0.0;
-  empBalance : number = 50;
+  empBalance : number;
   amount : number;
   addStatus: AddStatus[];
 
@@ -61,7 +62,6 @@ export class OrderComponent implements OnInit {
     this.orderService.getCart(this.userId).subscribe({
       next:data => {
         this.cart = data;
-        console.log(this.cart[0].itemID);
       },
       error: error => this.errorMsg = error
     });
@@ -134,6 +134,7 @@ export class OrderComponent implements OnInit {
     //add money to wallet
     addBalance()
     {
+      console.log(this.amount);
       if(this.amount < 0)
       {
         alert("Amount cannot be negative");
@@ -145,30 +146,55 @@ export class OrderComponent implements OnInit {
       }
       else
       {
-        this.empBalance = this.empBalance + this.amount;
-       //console.log(this.empBalance);
-        alert("Your updated balance is : " +this.empBalance);
+        this.empBalance = Number(localStorage.getItem('balance')) + this.amount;
+        this.orderService.addBalance(this.empBalance, localStorage.getItem('token')).subscribe({
+          next:data=>{
+            this.add=data;
+            if(this.add){
+              localStorage.setItem('balance', this.empBalance.toString());
+              alert("Your updated balance is : " +this.empBalance);
+            }
+          },
+          error: error => this.errorMsg = error
+        });
+        
       }
     
     }
 
     //checkout and edit balance
-    checkOut(l : Order[])
+    checkOut(l : Cart[])
     {
-      if(this.total > this.empBalance)
+      for (let i = 0; i < l.length; i++) 
+      {
+        this.total=this.total+l[i].totalPrice;
+      }
+      if(this.total >  Number(localStorage.getItem('balance')))
       {
         alert("Sorry ! You have insufficient balance to place this order")
       }
       else
       {
-        alert("Thanks for you order | Your token number is 121 | " + "Total amount is " + this.total);
-        this.empBalance = this.empBalance - this.total;
-        alert("Balanceleft in your Wallet : " + this.empBalance);
+        this.orderService.checkOut(l,localStorage.getItem('token')).subscribe({
+          next:data=>{
+            this.cart=data;
+            if(this.cart==null){
+              alert("Thanks for you order | Your token number is 121 | " + "Total amount is " + this.total);
+              this.empBalance =  Number(localStorage.getItem('balance')) - this.total;
+              localStorage.setItem('balance',this.empBalance.toString());
+              alert("Balanceleft in your Wallet : " + this.empBalance);
+            }
+          },
+          error: error => this.errorMsg = error
+        });
+        
         //window.history.go(0);
       }
       
       
     }
+
+    
 }
 
 

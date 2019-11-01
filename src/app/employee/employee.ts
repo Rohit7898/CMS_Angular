@@ -1,8 +1,8 @@
-interface employee{
+export interface employee{
     image:any
     name: string,
     title:string,
-    id: number,
-    contact: number,
-    balance: number
+    id: string,
+    contact: string,
+    balance: string
 }
