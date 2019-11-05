@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AdminactionService } from './adminaction.service';
 
 import { NgForm } from '@angular/forms';
+import { Vendor } from '../data/Vendor';
+import { EditmodalComponent } from '../editmodal/editmodal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DatapassageService } from '../datapassage.service';
 
 @Component({
   selector: 'app-adminaction',
@@ -12,87 +16,75 @@ export class AdminactionComponent implements OnInit {
   
   adminitem: adminact[];
   errorMsg: any;
+  vendors:Vendor[];
   editadmintem: adminact;
-  constructor(public adminactService:AdminactionService ) { }
+  vendor:Vendor={
+    vendorId: null,
+	vendorName: null,
+	vendorEmail: null,
+	vendorPhone: null,
+    vendorUname: null,
+	vendorPassword: null,
+	balance: 1234
+  };
+  constructor(public adminactService:AdminactionService,private modalservice: NgbModal,private interact: DatapassageService ) { }
 
   ngOnInit() {
-    this.adminactService.getadminact().subscribe(
-      data => this.adminitem = data,
-      error => this.errorMsg = error
-    );
+    this.adminactService.showVendor().subscribe({
+      next:data=>{
+        this.vendors=data;
+        console.log(this.vendors);
+      },
+      error:error=>this.errorMsg=error
+    });
   }
    
   add(addForm: NgForm): void {
-    this.editadmintem = undefined;
-    // name = name.trim();
-    if (!addForm.value.vendorname) {
-      return;
-    }
-    if (!addForm.value.address) {
-      return;
-    }
-    if (!addForm.value.emailid) {
-      return;
-    }
-    if (!addForm.value.contact) {
-      return;
-    }
-    if (!addForm.value.balance) {
-      return;
-    }
-
-    
-
-    // The server will generate the id for this new North Indian Item
-    // const newNorthItem: NorthVendor = { name, price } as NorthVendor;
-    // this.northVendorService.addNorthIndianItem(newNorthItem)
-    //   .subscribe(north => {this.northVendors.push(north), console.log(north)},
-    //   error => this.errorMsg = error);
-
-    this.adminitem.push(addForm.value);
-    console.log(this.adminitem);
-    alert("Menu Item: " + addForm.value.vendorname + " Added!");
-    addForm.resetForm();
-
-
+    $('#btnSave').click(function() {
+      $('#myModal').modal('hide');
+   });
+    console.log(this.vendor.vendorName);
+    this.adminactService.addvendor(this.vendor).subscribe(
+      data => this.adminitem = data,
+      error => this.errorMsg = error
+    )
+   
   }
-  
-  delete(adminacting: adminact): void {
-    this.adminitem = this.adminitem.filter(n => n !==adminacting );
-    this.adminactService.deleteadminact(adminacting.id).subscribe();
-    alert("Menu Item: " + adminacting.vendorname + " Deleted!");
+ 
+ 
+  delete(v: Vendor,i:any): void {
+    //this.adminitem = this.adminitem.filter(n => n !==adminacting );
+    this.adminactService.deleteadminact(v.vendorId).subscribe();
+    alert("Menu Item: " + v.vendorName + " Deleted!");
+    this.vendors.splice(i,1);
   }
 
   
-  edit(adminacting: adminact){
-    this.editadmintem = adminacting;
+  edit(v:Vendor){
+  
+    this.interact.sendMessage(v);
+
+    this.modalservice.open(EditmodalComponent);
+    //this.editadmintem = v;
+    this.update();
   }
 
-  update() {
-
-    if (this.editadmintem) {
-
+  update() 
+  {
+    if (this.editadmintem) 
+    {
       this.adminactService.updateadminact(this.editadmintem).subscribe
-
-        (editNorthItem => {
-
-          const nr = this.editadmintem ? this.adminitem.findIndex(n => n.id === this.editadmintem.id) : -1;
-
-          if (nr > -1) {
-
-            this.adminitem[nr] = this.editadmintem;
-
+        (editNorthItem =>
+          {
+            const nr = this.editadmintem ? this.adminitem.findIndex(n => n.id === this.editadmintem.id) : -1;
+            if (nr > -1) 
+            {
+              this.adminitem[nr] = this.editadmintem;
+            }
           }
-
-        });
-
+        );
       this.editadmintem = undefined;
-
     }
-
   }
   
-
-
-
 }

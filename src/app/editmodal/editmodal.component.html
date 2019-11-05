@@ -1,0 +1,75 @@
+<div data-toggle="modal">
+<div class="modal-header">
+    <h4 class="modal-title">My Form</h4>
+  </div>
+  <form #myForm = "ngForm">
+    <div class="modal-body">
+      <div class="container">
+            <div class="form-group row">
+                    <label for="resoadd" class="col-4 col-form-label">Vendor Id</label>
+                    <div class="col-8">
+                      <input type="text" class="form-control" id="id" name="id" required
+                             placeholder="Id:"[(ngModel)]=obj.vendorId  #id = "ngModel" readonly/>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                            <label for="resoadd" class="col-4 col-form-label">Vendor Username:</label>
+                            <div class="col-8">
+                              <input type="text" class="form-control" id="username" name="username" required
+                                     placeholder="username:"[(ngModel)]=obj.vendorUname  #username = "ngModel" readonly/>
+                             
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                                    <label for="resoadd" class="col-4 col-form-label">Vendor Password:</label>
+                                    <div class="col-8">
+                                      <input type="text" class="form-control" id="password" name="password" required
+                                             placeholder="Password:"[(ngModel)]=obj.vendorPassword  #password = "ngModel" readonly/>
+                                     
+                                    </div>
+                            </div>
+        <div class="form-group row" id="Nmae-add-row">
+          <label class="col-4 col-form-label">Name</label>
+          <div class="col-8">
+            <input type="text" class="form-control-plaintext"  name="name" placeholder="Vendor:"[(ngModel)]=obj.vendorName #name = "ngModel" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Email</label>
+          <div class="col-8">
+            <input type="text" class="form-control" id="Email" name="email" required
+                   placeholder="Email:"[(ngModel)]=obj.vendorEmail  #email = "ngModel" />
+           
+          </div>
+
+        </div>
+        <div class="form-group row">
+          <label for="skill" class="col-4 col-form-label">Contact</label>
+          <div class="col-8">
+            <input type="text" class="form-control" id="contact" name="contact" required
+                   placeholder="contact" [(ngModel)]=obj.vendorPhone #contact = "ngModel" />
+            
+            <!--          <div [hidden]="skill.valid || skill.pristine" class="alert alert-danger"> Skill is required.</div>-->
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="exp" class="col-4 col-form-label">Balance</label>
+          <div class="col-8">
+            <input type="text" class="form-control" id="Balance" name="balance"
+                   placeholder="Balance" [(ngModel)]=obj.balance #balance = "ngModel" />
+          </div>
+        </div>
+     
+      </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success"
+                [disabled]="!myForm.valid" (click)="submit(myForm.value)">
+          Submit Form
+        </button>
+         <button class="btn btn-danger" data-dismiss="modal">Close
+        </button>
+      </div>
+  </form>
+</div>
